@@ -1,7 +1,7 @@
 class CreateSections < ActiveRecord::Migration[5.2]
   def change
     create_table :sections do |t|
-      t.string :status
+      t.string :status, :null => false, :default => "To Do"
       t.text :original_content
       t.text :final_content
       t.references :document, foreign_key: true

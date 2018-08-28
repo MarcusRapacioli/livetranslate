@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_094921) do
   end
 
   create_table "sections", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "To Do", null: false
     t.text "original_content"
     t.text "final_content"
     t.bigint "document_id"
