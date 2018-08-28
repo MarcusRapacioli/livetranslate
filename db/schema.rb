@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_094921) do
   end
 
   create_table "lessons", force: :cascade do |t|
+    t.string "lesson_name"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
