@@ -1,0 +1,6 @@
+<%= simple_form_for(@lesson) do |f| %>
+<%= f.input :lesson_name, placeholder: "Lesson Name" %>
+<%= f.input :description, placeholder: "Lesson Description" %>
+<%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
+<%= f.submit "Create your lesson" %>
+<% end %>
