@@ -1,0 +1,6 @@
+<%= simple_form_for(@student_lesson) do |f| %>
+<%= f.association :student, label_method: :first_name %>
+<%= f.association :lesson, label_method: :lesson_name %>
+<%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
+<%= f.submit "Create your StudentLesson" %>
+<% end %>
