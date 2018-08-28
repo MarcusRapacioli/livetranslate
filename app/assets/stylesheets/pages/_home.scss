@@ -1,1 +1,37 @@
 // Specific CSS for your home-page
+.home {
+  display: flex;
+  background-color: #FFFFFF;
+}
+
+.call {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-grow: 1;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+ }
+
+
+.carousel {
+  flex-grow: 1;
+  background-color: #89B580;
+  width: 50vw;
+  height: 100vh;
+}
+.box {
+  background-color: #E8E8E8;
+  margin-left: 135px;
+  margin-right: 135px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 4px;
+  margin-top: 18px;
+}
+
+.box .button {
+margin-left: 10px;
+}
+
