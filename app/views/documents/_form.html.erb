@@ -2,6 +2,6 @@
 <%= f.input :title, placeholder: "Title" %>
 <%= f.input :original_content, placeholder: "Content" %>
 <%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
-<%= f.association :lesson, label_method: :lesson_name %>
+<%= f.association :lesson %>
 <%= f.submit "Upload your document" %>
 <% end %>

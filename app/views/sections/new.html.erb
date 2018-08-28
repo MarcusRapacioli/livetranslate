@@ -1,0 +1,6 @@
+<%= simple_form_for([@document, @section]) do |f| %>
+<%= f.association :student, collection: @students, placeholder: "Student Name" %>
+<%= f.input :original_content, placeholder: "Original Content" %>
+<%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
+<%= f.submit "Create your Section" %>
+<% end %>

@@ -3,4 +3,8 @@ class Lesson < ApplicationRecord
   has_many :documents
   has_many :student_lessons
   has_many :students, through: :student_lessons, source: :student
+
+  def name
+    lesson_name
+  end
 end
