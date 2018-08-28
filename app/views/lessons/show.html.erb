@@ -1,3 +1,4 @@
 <%= @lesson.lesson_name %>
 <%= @lesson.description %>
+<%= @lesson.students.map { |s| s.first_name}  %>
 <%= link_to "Delete", lesson_path, method: :delete %>

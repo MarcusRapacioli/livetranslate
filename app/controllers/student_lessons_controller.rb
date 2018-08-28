@@ -6,10 +6,10 @@ class StudentLessonsController < ApplicationController
 
   def create
     @student_lesson = StudentLesson.new(student_lesson_params)
-    @student_lesson.student = User.find(parms[:student_lesson][:user_id].to_i)
+    @student_lesson.student = User.find(params[:student_lesson][:user_id].to_i)
     @student_lesson.lesson = Lesson.find(params[:student_lesson][:lesson_id].to_i)
     if @student_lesson.save!
-      redirect_to root_path
+     redirect_to lesson_path(@student_lesson.lesson)
     end
   end
 
