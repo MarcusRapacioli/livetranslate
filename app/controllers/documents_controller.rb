@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
-  after_create :pdf_to_text
+  # after_create :pdf_to_text
 
   def index
     if current_user.user_type = "Business"
