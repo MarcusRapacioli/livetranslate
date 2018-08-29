@@ -1,5 +1,6 @@
 class SectionsController < ApplicationController
-  before_action :set_document, only: [:index, :new, :create, :edit, :show]
+  before_action :set_document, only: [:index, :new, :create, :edit, :show, :destroy]
+  before_action :set_section, only: [:edit, :show, :destroy]
 
   def index
     @sections = @document.sections
@@ -9,13 +10,11 @@ class SectionsController < ApplicationController
   end
 
   def new
-    @document = Document.find(params[:document_id])
     @section = Section.new
     @students = @document.lesson.students
   end
 
   def create
-    @document = Document.find(params[:document_id])
     @section = Section.new(section_params)
     @section.document = @document
     # @section.original_content = @document
@@ -25,6 +24,17 @@ class SectionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    @section.destroy
+    redirect_to document_sections_path(@document)
   end
 
 
@@ -40,6 +50,10 @@ class SectionsController < ApplicationController
 
   def set_document
     @document = Document.find(params[:document_id])
+  end
+
+  def set_section
+    @section = Section.find(params[:id])
   end
 
 end
