@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_094921) do
+ActiveRecord::Schema.define(version: 2018_08_29_102125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_094921) do
     t.text "final_content"
     t.bigint "user_id"
     t.bigint "lesson_id"
+    t.string "pdf"
     t.index ["lesson_id"], name: "index_documents_on_lesson_id"
     t.index ["user_id"], name: "index_documents_on_user_id"
   end
