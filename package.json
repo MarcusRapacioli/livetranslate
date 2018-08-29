@@ -4,6 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
+    "fullpage": "^1.4.2",
     "fullpage.js": "^3.0.2",
     "jquery": "^3.3.1"
   },
