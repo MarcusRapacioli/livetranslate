@@ -59,10 +59,10 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    cliver (0.3.2)
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
-    cliver (0.3.2)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
@@ -72,9 +72,9 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    docsplit (0.7.6)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    docsplit (0.7.6)
     dotenv (2.5.0)
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
