@@ -19,5 +19,5 @@ User.create!(first_name: "Jared", last_name: "Trump", email: "jared@me.com", pas
 
 
 Lesson.create!(lesson_name: "Art of the deal", teacher: User.first)
-Lesson.create!(lesson_name: "property 101", teacher: User.fourth)
+Lesson.create!(lesson_name: "property 101", teacher: User.last)
 
