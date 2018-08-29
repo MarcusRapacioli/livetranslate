@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
-  before_action :set_document, only: [:index, :new, :create, :edit, :show, :destroy]
-  before_action :set_section, only: [:edit, :show, :destroy]
+  before_action :set_document, only: [:index, :new, :update, :create, :edit, :show, :destroy]
+  before_action :set_section, only: [:edit, :update, :show, :destroy]
 
   def index
     @sections = @document.sections
@@ -20,16 +20,22 @@ class SectionsController < ApplicationController
     # @section.original_content = @document
     # @section.student = @students.find(params[:section][:user_id])
     if @section.save!
-      redirect_to root_path
+      redirect_to document_sections_path(@document)
     else
       render :new
     end
   end
 
   def edit
+     @students = @document.lesson.students
   end
 
   def update
+    if @section.update(section_params)
+      redirect_to document_sections_path(@document)
+    else
+      render :edit
+    end
   end
 
   def destroy

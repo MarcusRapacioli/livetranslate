@@ -1,9 +1,10 @@
 <h1>This is the section index</h1>
   <% @sections.each do |section| %>
-  <%= section.original_content %>
-  <p><strong>status</strong>: <%= section.status %></p>
-  <p><strong>Assinged To: </strong> <%= section.student.first_name%> <%= section.student.last_name %> </p>
-  <p><strong>Document: </strong> <%= @document.title %></p>
-  <%= link_to "Delete", document_section_path(@document,section), method: :delete %>
-  <%#= button_to "Edit", action: "edit" %>
-<% end %>
+    <%= section.original_content %>
+    <p><strong>status</strong>: <%= section.status %></p>
+    <p><strong>Assinged To: </strong> <%= section.student.first_name%> <%= section.student.last_name %> </p>
+    <p><strong>Document: </strong> <%= @document.title %></p>
+    <%= link_to "Delete", document_section_path(@document,section), method: :delete %>
+    </br></br>
+    <%#= link_to "Edit", action: "edit" %>
+  <% end %>
