@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
   resources :lessons
   resources :student_lessons
+  resources :users
 
 end
