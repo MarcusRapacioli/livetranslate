@@ -10,7 +10,7 @@ tabs.forEach(tab => {
     openCity(event, event.target.dataset["city"])
   })
 })
-=======
+
 fullPage();
 fullpage_api.setAllowScrolling(false);
 
