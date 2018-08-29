@@ -62,6 +62,7 @@ GEM
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
+    cliver (0.3.2)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
@@ -73,6 +74,7 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    docsplit (0.7.6)
     dotenv (2.5.0)
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
@@ -116,6 +118,8 @@ GEM
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    pdftotext (0.2.1)
+      cliver (~> 0.3)
     pg (0.21.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -231,10 +235,12 @@ DEPENDENCIES
   carrierwave (~> 1.2)
   cloudinary
   devise
+  docsplit (~> 0.7.6)
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
+  pdftotext
   pg (~> 0.21)
   pry-byebug
   pry-rails
