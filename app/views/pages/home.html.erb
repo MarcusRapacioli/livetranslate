@@ -2,34 +2,39 @@
   <div class="left-section">
     <h1>live<strong>translate</strong></h1>
     <h3>Linking talented languages students to small businesses.</h3>
-    <div class="form-group form-inline box">
-      <input type="text" placeholder="Email" class="form-control">
-      <button type="submit" class="button">Get started</button>
+    <div class="box">
+      <input type="text" placeholder="Your email" class="form-control custom">
+      <%= link_to "Get started", new_user_registration_path, class: "button" %>
     </div>
   </div>
 
 <div class="right-section">
     <div id="fullpage" class="carousel">
       <div class="section carousel-item1">
+        <%= image_tag 'landing.png' %>
       </div>
       <div class="section carousel-item2">
+        <%= image_tag 'works.png' %>
         <h2>How it works?</h2>
-        <h4>Step 1 | Upload your document</h4>
-        <h4>Step 2 | A university class translates it</h4>
-        <h4>Step 3 | We send your document back to you</h4>
+        <p>Step 1 | Upload your document <br>
+           Step 2 | A university class translates it <br>
+           Step 3 | We send your document back to you</p>
       </div>
       <div class="section carousel-item3">
-        <h3>When you upload your document we assign it to a class at one of our accredited partner universities.</h3>
+        <%= image_tag 'upload.png' %>
+        <p>When you upload your document we assign it to a class at one of our accredited partner universities.</p>
       </div>
       <div class="section carousel-item4">
-        <h3>Students in the class work on sections of the document indiviually and then a teacher moderates the final version during a lesson.
-        </h3>
+        <%= image_tag 'sections.png' %>
+        <p>Students in the class work on sections of the document indiviually and then a teacher moderates the final version during a lesson.
+        </p>
       </div>
       <div class="section carousel-item5">
-        <h3>
+        <%= image_tag 'submit.png' %>
+        <p>
           We send your document back to you. <br>
           Your translation is reliable, great value for money and has harnessed the talents of motivated students.
-        </h3>
+        </p>
       </div>
     </div>
   </div>

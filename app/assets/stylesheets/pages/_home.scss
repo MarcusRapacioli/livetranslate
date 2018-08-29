@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  flex-grow: 1;
+  flex: 0 0 50vw;
   justify-content: center;
   width: 50vw;
   height: 100vh;
@@ -16,34 +16,112 @@
 
 
 .carousel-item1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   background-color: #EE6352;
 }
 
+.carousel-item1 img {
+  height: 600px;
+}
+
 .carousel-item2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   background-color: #FFDF37;
+}
+.carousel-item2 img {
+  height: 500px;
 }
 
 .carousel-item3 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   background-color: #FF8B37;
 }
+.carousel-item3 img {
+  height: 500px;
+}
 .carousel-item4 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   background-color: #57A4FF;
 }
+.carousel-item4 img {
+  height: 500px;
+}
 .carousel-item5 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   background-color: #FF576B;
+}
+.carousel-item5 img {
+  height: 500px;
 }
 
 .box {
+  display: flex;
   background-color: #E8E8E8;
-  margin-left: 135px;
-  margin-right: 135px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 15px;
+  padding: 15px;
   border-radius: 4px;
   margin-top: 18px;
 }
 
 .box .button {
-margin-left: 10px;
+ margin-left: 30px;
 }
 
+.box .form-control {
+    display: block;
+    width: 60%;
+    font-size: 18px;
+    line-height: 1.428571429;
+    color: #919193;
+     transition: background-color ease-in-out 0.15s;
+    background-color: transparent;
+    border: none;
+    padding: 13px 16px;
+    box-shadow: none;
+    border-bottom: 3px solid #919193;
+    border-radius: 4px;
+
+}
+.box .form-control:focus {
+    display: block;
+    width: 60%;
+    padding: 6px 16px;
+    font-size: 18px;
+    line-height: 1.428571429;
+    color: #919193;
+    background-color: rgba(236, 100, 86, 0.1);
+    border-radius: 4px;
+    border-bottom: 3px solid #EE6352;
+    transition: background-color ease-in-out 0.15s;
+    box-shadow: none;
+}
+
+.right-section h2 {
+ margin: 0 ;
+}
+.right-section p {
+  font-size: 26px;
+  font-weight: lighter;
+  padding: 30px;
+}
+
+.left-section h3 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.left-section h1 {
+  font-size: 51px;
+
+}
