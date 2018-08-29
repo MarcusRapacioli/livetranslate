@@ -29,3 +29,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
+gem "docsplit", "~> 0.7.6"

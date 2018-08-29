@@ -63,6 +63,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    docsplit (0.7.6)
     dotenv (2.5.0)
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
@@ -206,6 +207,7 @@ DEPENDENCIES
   bootsnap
   bootstrap-sass (~> 3.3)
   devise
+  docsplit (~> 0.7.6)
   dotenv-rails
   font-awesome-sass (~> 5.0.9)
   jbuilder (~> 2.0)
