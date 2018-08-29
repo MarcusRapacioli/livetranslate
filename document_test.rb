@@ -8,15 +8,17 @@ reader.pages.each do |page|
   sentence_array << clean.scan(/[^\.\!\?]*[\.\!\?]/)
 end
 
+
 sentences = sentence_array.flatten
 
-students = %w[donald ivanka theresa jeremy]
+students = %w[donald ivanka theresa jeremy marcus wes georges]
 
 number_of_sentences = sentences.count
 
 x = number_of_sentences / students.count
 
 h = Hash[students.map {|student| [student, x]}]
+
 
 remainder = number_of_sentences % students.count
 
@@ -45,20 +47,25 @@ end
 
 new_hash = {}
 students.each do |student|
-  section = sections.first
+  section = sections.sample
   new_hash[student] = section
   sections.delete(section)
 end
 
 
-p new_hash['donald']
-puts " ------------------"
-p new_hash['ivanka']
-puts " ------------------"
-p new_hash['theresa']
-puts " ------------------"
-p new_hash['jeremy']
-puts " ------------------"
+
+# new_hash.each do |key, value|
+#   puts "#{key}:#{value}"
+#   puts "---------------"
+# end
+# p new_hash['donald']
+# puts " ------------------"
+# p new_hash['ivanka']
+# puts " ------------------"
+# p new_hash['theresa']
+# puts " ------------------"
+# p new_hash['jeremy']
+# puts " ------------------"
 
 
 
