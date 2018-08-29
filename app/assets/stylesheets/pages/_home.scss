@@ -1,10 +1,10 @@
 // Specific CSS for your home-page
-.home {
+.flex-container {
   display: flex;
   background-color: #FFFFFF;
 }
 
-.call {
+.left-section {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -15,12 +15,24 @@
  }
 
 
-.carousel {
-  flex-grow: 1;
-  background-color: #89B580;
-  width: 50vw;
-  height: 100vh;
+.carousel-item1 {
+  background-color: #EE6352;
 }
+
+.carousel-item2 {
+  background-color: #FFDF37;
+}
+
+.carousel-item3 {
+  background-color: #FF8B37;
+}
+.carousel-item4 {
+  background-color: #57A4FF;
+}
+.carousel-item5 {
+  background-color: #FF576B;
+}
+
 .box {
   background-color: #E8E8E8;
   margin-left: 135px;
