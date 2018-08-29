@@ -1,11 +1,12 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+  <%= link_to root_path, class: "navbar-wagon-brand" do%>
+   <i class="fas fa-graduation-cap"></i>
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
 
     <% if user_signed_in? %>
 
