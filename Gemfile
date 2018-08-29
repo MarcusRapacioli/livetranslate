@@ -31,3 +31,4 @@ group :development, :test do
 end
 
 gem "docsplit", "~> 0.7.6"
+gem "pdftotext"
