@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
   before_action :set_document, only: [:show, :edit, :update, :destroy]
+  after_create :pdf_to_text
 
   def index
     if current_user.user_type = "Business"
@@ -48,12 +49,25 @@ class DocumentsController < ApplicationController
 
   def document_params
 
-    params.require(:document).permit(:title, :original_content, :business, :lesson)
+    params.require(:document).permit(:title, :original_content, :business, :lesson, :pdf)
   end
 
   def set_document
     @document = Document.find(params[:id])
   end
+
+  def pdf_to_text
+    reader = PDF::Reader.new("lorem.pdf")
+      reader.pages.each do |page|
+      puts page.text
+      end
+  end
+
+  def text_split
+
+  end
+
+
 
 
 end

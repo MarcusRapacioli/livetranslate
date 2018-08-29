@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   resources :lessons
   resources :student_lessons
   resources :users
-
 end
