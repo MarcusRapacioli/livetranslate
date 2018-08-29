@@ -1,4 +1,12 @@
 class SectionsController < ApplicationController
+  before_action :set_document, only: [:index, :new, :create, :edit, :show]
+
+  def index
+    @sections = @document.sections
+  end
+
+  def show
+  end
 
   def new
     @document = Document.find(params[:document_id])
@@ -28,6 +36,10 @@ class SectionsController < ApplicationController
 
   def split_document
 
+  end
+
+  def set_document
+    @document = Document.find(params[:document_id])
   end
 
 end
