@@ -4,5 +4,7 @@ class Document < ApplicationRecord
   has_many :sections
 
   validates :title, presence: :true
-  validates :original_content, presence: :true
+  # validates :original_content, presence: :true
+
+  mount_uploader :pdf, PdfUploader
 end

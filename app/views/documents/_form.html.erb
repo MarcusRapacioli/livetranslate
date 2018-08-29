@@ -1,7 +1,20 @@
-<%= simple_form_for(@document) do |f| %>
-<%= f.input :title, placeholder: "Title" %>
-<%= f.input :original_content, placeholder: "Content" %>
+<!-- <#%= simple_form_for(@document) do |f| %>
+<#%= f.input :title, placeholder: "Title" %>
+<#%= f.input :original_content, placeholder: "Content" %>
 <%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
-<%= f.association :lesson %>
-<%= f.submit "Upload your document" %>
+<#%= f.association :lesson %>
+<#%= f.submit "Upload your document" %>
+<#% end %> -->
+
+
+
+<%= simple_form_for(@document) do |f| %>
+  <!-- [...] -->
+  <%= f.input :title, placeholder: "Title" %>
+  <%= f.association :lesson %>
+  <%= f.input :pdf %>
+  <%= f.input :pdf_cache, as: :hidden %>
+
+  <%= f.submit "Upload your document" %>
+  <!-- [...] -->
 <% end %>

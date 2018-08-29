@@ -49,7 +49,7 @@ class DocumentsController < ApplicationController
 
   def document_params
 
-    params.require(:document).permit(:title, :original_content, :business, :lesson)
+    params.require(:document).permit(:title, :original_content, :business, :lesson, :pdf)
   end
 
   def set_document
