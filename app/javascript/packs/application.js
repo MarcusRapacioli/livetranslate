@@ -1,10 +1,5 @@
 import "bootstrap";
 
-// import '../components/fullpage';
-// fullPage();
-// fullpage_api.setAllowScrolling(false);
-
-
 // Profile tabs
 import { openCity } from '../components/tabs';
 
@@ -15,3 +10,7 @@ tabs.forEach(tab => {
     openCity(event, event.target.dataset["city"])
   })
 })
+=======
+fullPage();
+fullpage_api.setAllowScrolling(false);
+
