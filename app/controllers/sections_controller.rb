@@ -1,4 +1,6 @@
 class SectionsController < ApplicationController
+  before_action :set_section, only: [:edit, :update, :destroy]
+
 
   def new
     @document = Document.find(params[:document_id])
@@ -19,6 +21,13 @@ class SectionsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+
+  end
+
 
   private
 
@@ -26,8 +35,8 @@ class SectionsController < ApplicationController
     params.require(:section).permit(:original_content, :status, :user_id )
   end
 
-  def split_document
-
+  def set_section
+    @section = Section.find(params[:id])
   end
 
 end
