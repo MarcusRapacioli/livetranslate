@@ -1,0 +1,5 @@
+meta_product_name: "livetranslate"
+meta_title: "livetranslate"
+meta_description: "Linking talented languages students to small businesses"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"
