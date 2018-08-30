@@ -5,6 +5,7 @@
     <div class="box">
       <input type="text" placeholder="Your email" class="form-control custom">
       <%= link_to "Get started", new_user_registration_path, class: "button" %>
+       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
     </div>
   </div>
 
