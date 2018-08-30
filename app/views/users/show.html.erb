@@ -19,14 +19,17 @@
   <div id="French" class="tabcontent">
     <h3>French</h3>
     <p>French rules</p>
-    <%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :width => 200, :height => 250, :density => 300) %>
-    <%= cl_image_tag("SIRO_Reg.jpg", :width => 200, :height => 250, :density => 300) %>
-    <%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :width => 200, :height => 250, :density => 300) %>
+    <div class="documents">
+    <%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13, :radius=>10) %>
+    <%= cl_image_tag("SIRO_Reg.jpg", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13, :radius=>10) %>
+    <%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13,:radius=>2) %>
+      </div>
       </div>
 
   <div id="German" class="tabcontent">
     <h3>German</h3>
     <p>German is ok.</p>
+    <%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :width => 200, :height => 250, :density => 300) %>
   </div>
 
   <div id="Russian" class="tabcontent">
