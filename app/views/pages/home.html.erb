@@ -10,8 +10,15 @@
     <h1>live<strong>translate</strong></h1>
     <h3>Linking talented languages students to small businesses.</h3>
     <div class="box">
-      <input type="text" placeholder="Your email" class="form-control custom">
-      <%= link_to "Get started", new_user_registration_path, class: "button" %>
+      <form class="form-inline" action="/users/sign_up">
+      <div>
+        <input type="text" placeholder="Your email" name="email" class="form-control custom">
+      </div>
+      <div>
+        <input type="submit" value= "Get started", class="button">
+      </div>
+      </form>
+      <%#= link_to "Get started", new_user_registration_path, class: "button" %>
     </div>
   </div>
 
