@@ -59,12 +59,18 @@ Here tonight is Preston Sharp, a 12-year-old boy from Redding, California, who n
 I met Preston a little while ago and he is something very special, that I can tell you. Great future. Thank you, Preston. Thank you, very much. Preston’s reverence for those who have served our nation remind us why we salute our flag, why we put our hands on our hearts for the Pledge of Allegiance, and why we proudly stand for the national anthem.
 
 </p></div>
-  <p>Edit this section from "<%= @document.title %>"</p>
-<%= simple_form_for([@document, @section]) do |f| %>
-<%#= f.association :student, collection: @students, placeholder: "Student Name" %>
-<%= f.input :original_content, placeholder: "Original Content" %>
-<%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
-<%= f.submit "Submit" %>
-<% end %>
+  <div class="doc-title">Edit this section from: </br>"<%= @document.title %>"</div>
+<div class="student-text">
+  <%= simple_form_for([@document, @section]) do |f| %>
+  <%#= f.association :student, collection: @students, placeholder: "Student Name" %>
+  <div class="text-box">
+  <%= f.input :original_content, placeholder: "Original Content", :input_html => {:rows =>8}  %>
+  </div>
+  <%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
+  <div class="submit-edit">
+  <%= f.submit "Submit" %>
+  </div>
+  <% end %>
+</div>
 </div>
 </div>
