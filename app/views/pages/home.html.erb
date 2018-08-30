@@ -1,11 +1,17 @@
 <div class="flex-container">
   <div class="left-section">
+   <div class="links">
+    <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <% else %>
+    <%= link_to "Login", new_user_session_path %>
+    <% end %>
+   </div>
     <h1>live<strong>translate</strong></h1>
     <h3>Linking talented languages students to small businesses.</h3>
     <div class="box">
       <input type="text" placeholder="Your email" class="form-control custom">
       <%= link_to "Get started", new_user_registration_path, class: "button" %>
-       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
     </div>
   </div>
 
