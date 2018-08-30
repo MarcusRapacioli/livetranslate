@@ -1,0 +1,53 @@
+.translate-container {
+  width: 750px;
+  margin: auto;
+}
+
+.section-card {
+  padding: 15px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#translate-card {
+  padding: 20px;
+  border-radius: 5px;
+}
+
+// .original-text {
+//   background-color: white;
+//   border-radius: 10px;
+//   border: solid 1px black;
+// }
+
+.student-text {
+  height: 300px;
+}
+
+#input-field {
+  position: sticky;
+  bottom: 0;
+  background-color: #F4F4F4;
+  padding-top: 30px;
+}
+
+.text-box {
+  height: 200px;
+  // padding: 20px;
+}
+
+.doc-title {
+  padding: 24px;
+  text-align: center;
+}
+
+.submit-edit {
+
+}
+
+.selected-card {
+  background-color: #F1F399;
+  padding: 20px;
+  border-radius: 5px;
+}

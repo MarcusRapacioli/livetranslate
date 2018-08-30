@@ -67,7 +67,7 @@ class DocumentsController < ApplicationController
   end
 
   def create_sections
-    @students = @document.lesson.students
+    @students = @document.lesson.students.order('random()')
     # @section = Section.new(section_params)
     @document.reload
     io = open(Cloudinary::Utils.cloudinary_url(@document.pdf))
@@ -110,27 +110,33 @@ class DocumentsController < ApplicationController
       sentences -= part
       sections << part
     end
+    p sections
 
     new_hash = {}
     @students.each do |student|
-      section = sections.sample
+      section = sections.first
       new_hash[student.id.to_s] = section
       sections.delete(section)
     end
 
+    counter = 1
     new_hash.each do |k,v|
-      section = Section.new(document: @document)
+      section = Section.new(document: @document, order: counter)
       section.student = User.find(k.to_i)
       section.original_content = v
       section.save!
+      counter += 1
     end
 
-    p Section.all
     # for each key value pair
     # Section.new(sentences, docs, student_id)
   end
 
 
+ {
+  content: [ ],
+  order: 4
+ }
 
 
 end

@@ -1,23 +1,26 @@
-<div class="container">
-<div class="card" id="translate-card">
-<div class="original-text">
-  <!-- Original edit will go here -->
-  <p><%=@section.original_content  %>
+<div class="translate-container">
+  <div class="translate-container">
+    <% @sections.each do |section| %>
+      <div class="<%= @section.original_content == section.original_content ? 'selected-card' : 'section-card' %>">
+        <p><%= section.original_content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="translate-container" id="input-field">
+  <div class="student-text">
+    <%= simple_form_for([@document, @section]) do |f| %>
+    <%#= f.association :student, collection: @students, placeholder: "Student Name" %>
+      <div class="text-box">
+        <%= f.input :final_content, placeholder: "Insert Translation Here", :input_html => {:rows =>5} %>
+      </div>
+    <%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
+      <div class="submit-edit">
+        <%= f.submit "Submit", class: "btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 
-</p></div>
-  <div class="doc-title">Edit this section from: </br>"<%= @document.title %>"</div>
-<div class="student-text">
-  <%= simple_form_for([@document, @section]) do |f| %>
-  <%#= f.association :student, collection: @students, placeholder: "Student Name" %>
-  <div class="text-box">
-  <%= f.input :final_content, placeholder: "Insert Translation Here", :input_html => {:rows =>5} %>
-  </div>
-  <%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
-  <div class="submit-edit">
-  <%= f.submit "Submit", class: "btn-primary" %>
-  </div>
-  <% end %>
-</div>
-</div>
-</div>

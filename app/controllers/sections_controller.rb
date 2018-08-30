@@ -8,6 +8,8 @@ class SectionsController < ApplicationController
   end
 
   def show
+    unordered = @document.sections
+    @sections = unordered.order(:id)
   end
 
   def new
@@ -22,7 +24,8 @@ class SectionsController < ApplicationController
     # @section.student = @students.find(params[:section][:user_id])
 
   def edit
-     @students = @document.lesson.students
+    @sections = @document.sections.order(:order)
+    @students = @document.lesson.students
   end
 
   def update
@@ -55,10 +58,6 @@ class SectionsController < ApplicationController
 
   def set_document
     @document = Document.find(params[:document_id])
-  end
-
-  def set_section
-    @section = Section.find(params[:id])
   end
 
 end
