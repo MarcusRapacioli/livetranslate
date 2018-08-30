@@ -135,3 +135,20 @@
 #fp-nav a.active span {
   background: #EE6352;
 }
+
+.links a {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #919193;
+  padding-bottom: 10px;
+  border-bottom: 2px solid transparent;
+}
+
+.links a:hover {
+  color: #EE6352;
+  text-decoration: none;
+  border-bottom: 2px solid #EE6352;
+}
