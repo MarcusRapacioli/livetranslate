@@ -16,16 +16,10 @@ class SectionsController < ApplicationController
   end
 
   def create
-    @section = Section.new(section_params)
-    @section.document = @document
+
+  end
     # @section.original_content = @document
     # @section.student = @students.find(params[:section][:user_id])
-    if @section.save!
-      redirect_to document_sections_path(@document)
-    else
-      render :new
-    end
-  end
 
   def edit
      @students = @document.lesson.students
@@ -53,7 +47,7 @@ class SectionsController < ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:original_content, :status, :user_id )
+    params.require(:section).permit(:document_id)
   end
 
   def set_section

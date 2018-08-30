@@ -16,6 +16,11 @@ User.create!(first_name: "Donald", last_name: "Trump", email: "donald@me.com", p
 User.create!(first_name: "Ivanka", last_name: "Trump", email: "ivanka@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
 User.create!(first_name: "Vlad", last_name: "Putin", email: "vlad@me.com", password: "moolah123", user_type: "Business", institution: "Kremlin")
 User.create!(first_name: "Jared", last_name: "Trump", email: "jared@me.com", password: "moolah123", user_type: "Teacher", institution: "Trump U")
+User.create!(first_name: "Jeremy", last_name: "Trump", email: "jeremy@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
+User.create!(first_name: "Theresa", last_name: "Trump", email: "theresa@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
+User.create!(first_name: "Nigel", last_name: "Trump", email: "nigel@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
+User.create!(first_name: "Boris", last_name: "Trump", email: "boris@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
+User.create!(first_name: "Jacob", last_name: "Trump", email: "jacob@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
 
 
 Lesson.create!(lesson_name: "Art of the deal", teacher: User.first)
