@@ -1,25 +1,22 @@
-<!-- <div class="flex-container">
+<div class="flex-container">
   <div class="side-bar">
     <div class="profile">
+      <%= cl_image_tag "owbonhwavemytmc3taab" %> <br>
+      <%= @user.name %> <br>
+      <%= @user.institution %>
     </div>
     <div class="bars">
-
-    </div>
-
-  </div> -->
-  <div class="page">
-    <ul class="" role="tablist">
+      <ul style= "" class="nav" role="tablist">
       <% @user.attended_lessons.each_with_index do |lesson, index| %>
         <li role="presentation" class="<%= 'active' if index == 0 %>"><a href="#<%= lesson.slug %>" aria-controls="<%= lesson.slug %>" role= "tab" data-toggle="tab"><%= lesson.name %></a></li>
       <% end %>
     </ul>
 
+    </div>
   </div>
-<!-- </div> -->
 
-
-  <!-- Tab panes -->
-  <div class="tab-content">
+  <div class="page">
+    <div class="tab-content">
     <% if @user.attended_lessons.empty? %>
       <h1>mate no lessons</h1>
     <% end %>
@@ -30,3 +27,9 @@
       </div>
     <% end %>
   </div>
+  </div>
+</div>
+
+
+  <!-- Tab panes -->
+

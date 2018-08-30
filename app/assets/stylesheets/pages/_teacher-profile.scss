@@ -1,9 +1,54 @@
 .flex-container {
 display:flex;
+background: rgb(245,245,245);
 
 }
 
 .side-bar {
   position: sticky;
   height: 100vh;
+  width: 25%;
+  text-align: center;
+  margin: 40px;
+  background: white;
+  box-shadow: 0px 0px 1px 1px lightgrey;
+
+}
+
+.tab-content {
+}
+
+.profile img {
+
+  width: 200px;
+  border-radius: 50%;
+}
+
+.profile {
+    border-bottom: 2px solid black;
+    padding: 20px;
+}
+
+.bars {
+
+}
+
+.bars a {
+  text-decoration: none;
+  text-align: right;
+
+.bars {
+  // border-left: 4px solid #EE6352;
+  color: #919193;
+}
+
+}
+
+.page {
+  height: 100vh;
+  width: 75%;
+  text-align: center;
+  margin: 40px;
+  background: white;
+  box-shadow: 0px 0px 1px 1px lightgrey;
 }
