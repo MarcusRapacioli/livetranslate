@@ -6,6 +6,12 @@ class DocumentsController < ApplicationController
     if current_user.user_type = "Business"
       @documents = current_user.documents
     end
+    if current_user.user_type = "Student"
+      @documents = current_user.documents
+    end
+    if current_user.user_type = "Teacher"
+      @documents = current_user.documents
+    end
   end
 
   def show

@@ -16,13 +16,53 @@
   </ul>
    </div>
 
+
+
   <div id="French" class="tabcontent">
     <h3>French</h3>
     <p>French rules</p>
+                  <% @documents.each do |t| %>
+        <div class="row">
+            <div class="column" style="flex: 0 0 70%">
+              <div class="files">
+                   <!--  <div class="document-list"> -->
+
+                      <ul> Title:
+                        <%= link_to  root_path, id: "preview_#{t.id}", class: "preview_link" do %>
+                          <%= t.title %>
+                          <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+                        <% end %>
+                      </ul>
+                    </div>
+                  </div>
+            <div class="column" style="flex: 1;">
+              <div class="completed">
+                    <!-- <div class="completed"> -->
+                      <p>Status:</p>
+                    </div>
+                    </div>
+            </div>
+      <% end %>
+</div>
+
+<script>
+  // console.log("ffsd");
+  // const all_links = document.querySelectorAll(".preview_link")
+  // all_links.forEach((element) => {
+  //   element.addEventListener("mouseover", () => {
+
+  //   })
+
+  // })
+
+</script>
+
+
     <div class="documents">
-    <%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13, :radius=>10) %>
-    <%= cl_image_tag("SIRO_Reg.jpg", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13, :radius=>10) %>
-    <%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13,:radius=>2) %>
+
+<!--     <#%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :title => "This text should be shown when hovering", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13, :radius=>10) %>
+    <#%= cl_image_tag("SIRO_Reg.jpg", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13, :radius=>10) %>
+    <#%= cl_image_tag("stsssqmkshoigqnwfups.jpg", :width => 200, :height => 250, :density => 300, :border => "2px_solid_black", :effect=>"shadow", :x=>13, :y=>13,:radius=>2) %> -->
       </div>
       </div>
 
