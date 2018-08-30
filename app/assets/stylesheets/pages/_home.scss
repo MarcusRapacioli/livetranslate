@@ -73,31 +73,35 @@
   padding: 15px;
   border-radius: 4px;
   margin-top: 18px;
+  width: 70%;
 }
 
-.box .button {
- margin-left: 30px;
+.box .form-inline {
+      width: 100%;
+ display: flex;
+ justify-content: space-between;
 }
 
 .box .form-control {
-    display: block;
-    width: 60%;
+    // display: block;
+    // width: 100%;
     font-size: 18px;
     line-height: 1.428571429;
     color: #919193;
      transition: background-color ease-in-out 0.15s;
     background-color: transparent;
     border: none;
-    padding: 13px 16px;
+    // padding: 13px 16px;
     box-shadow: none;
     border-bottom: 3px solid #919193;
     border-radius: 4px;
+      width: 120%;
 
 }
 .box .form-control:focus {
     display: block;
-    width: 60%;
-    padding: 6px 16px;
+    width: 120%;
+    // padding: 6px 16px;
     font-size: 18px;
     line-height: 1.428571429;
     color: #919193;
