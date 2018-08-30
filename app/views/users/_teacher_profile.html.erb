@@ -1,0 +1,32 @@
+<!-- <div class="flex-container">
+  <div class="side-bar">
+    <div class="profile">
+    </div>
+    <div class="bars">
+
+    </div>
+
+  </div> -->
+  <div class="page">
+    <ul class="" role="tablist">
+      <% @user.attended_lessons.each_with_index do |lesson, index| %>
+        <li role="presentation" class="<%= 'active' if index == 0 %>"><a href="#<%= lesson.slug %>" aria-controls="<%= lesson.slug %>" role= "tab" data-toggle="tab"><%= lesson.name %></a></li>
+      <% end %>
+    </ul>
+
+  </div>
+<!-- </div> -->
+
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <% if @user.attended_lessons.empty? %>
+      <h1>mate no lessons</h1>
+    <% end %>
+    <% @user.attended_lessons.each_with_index do |lesson, index| %>
+      <div role="tabpanel" class="tab-pane <%= 'active' if index == 0 %>" id="<%= lesson.slug %>">
+        <%= lesson.name %>
+        <!-- render -->
+      </div>
+    <% end %>
+  </div>

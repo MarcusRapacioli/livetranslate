@@ -7,4 +7,8 @@ class Lesson < ApplicationRecord
   def name
     lesson_name
   end
+
+  def slug
+    lesson_name.split.join('_').downcase
+  end
 end
