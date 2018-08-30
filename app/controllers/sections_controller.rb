@@ -38,6 +38,11 @@ class SectionsController < ApplicationController
     redirect_to document_sections_path(@document)
   end
 
+  def set_final(text)
+    @section.final_content = text
+
+  end
+
 
   private
 
