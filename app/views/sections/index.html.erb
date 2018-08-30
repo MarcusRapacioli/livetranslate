@@ -1,11 +1,7 @@
-<h1>This is the section index</h1>
+<div class="translate-container">
   <% @sections.each do |section| %>
-    <%= section.original_content %>
-    <p><strong>status</strong>: <%= section.status %></p>
-    <p><strong>Assinged To: </strong> <%= section.student.first_name%> <%= section.student.last_name %> </p>
-    <p><strong>Document: </strong> <%= @document.title %></p>
-    <%= link_to "Edit", edit_document_section_path(@document, section) %>
-    <%= link_to "Delete", document_section_path(@document,section), method: :delete %>
-    </br></br>
-    <%#= link_to "Edit", action: "edit" %>
+    <div class="section-card">
+      <p><%= section.final_content %></p>
+    </div>
   <% end %>
+</div>
