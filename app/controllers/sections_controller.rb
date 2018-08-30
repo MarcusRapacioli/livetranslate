@@ -26,6 +26,9 @@ class SectionsController < ApplicationController
   end
 
   def update
+    if @section.final_content?
+         @section.status = "Complete"
+    end
     if @section.update(section_params)
       redirect_to document_sections_path(@document)
     else
@@ -38,16 +41,12 @@ class SectionsController < ApplicationController
     redirect_to document_sections_path(@document)
   end
 
-  def set_final(text)
-    @section.final_content = text
-
-  end
 
 
   private
 
   def section_params
-    params.require(:section).permit(:document_id)
+    params.require(:section).permit(:document_id, :final_content, :status)
   end
 
   def set_section
