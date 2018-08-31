@@ -1,6 +1,6 @@
 .flex-container {
 display:flex;
-background: rgb(245,245,245);
+background: white;
 
 }
 
@@ -10,22 +10,36 @@ background: rgb(245,245,245);
   width: 25%;
   text-align: center;
   margin: 40px;
-  background: white;
-  box-shadow: 0px 0px 1px 1px lightgrey;
+  background: rgb(245,245,245);
+  box-shadow: 0px 0px 1px 1px rgb(245,245,245);
+  padding: 30px;
+  border-radius: 4px;
 
+}
+
+.name {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.institution {
+  // margin-top: 5px;
+  font-size: 15px;
+  font-weight: lighter;
 }
 
 .tab-content {
 }
 
-.profile img {
-
-  width: 200px;
+.avatar img {
+  width: 150px;
   border-radius: 50%;
+  border: 5px solid white;
 }
 
+
 .profile {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid rgb(220,220,220);
     padding: 20px;
 }
 
@@ -49,6 +63,6 @@ background: rgb(245,245,245);
   width: 75%;
   text-align: center;
   margin: 40px;
-  background: white;
-  box-shadow: 0px 0px 1px 1px lightgrey;
+  background: rgb(245,245,245);
+  border-radius: 4px;
 }
