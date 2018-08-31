@@ -121,7 +121,7 @@ color: rgb(150,150,150);
 
   &:hover {
     text-decoration: none;
-    border-bottom: 4px solid rgba(236, 100, 86, 1);
+    // border-bottom: 4px solid rgba(236, 100, 86, 1);
     color: rgb(51,51,51);
     .files-image { visibility: visible; }
 
@@ -146,6 +146,13 @@ border-bottom: 4px solid transparent;
   border-radius: 4px;
   justify-content: space-between;
   align-items: center;
+  border-left: 0 solid #EE6352;
+  transition: .3s;
+}
+
+.assignment:hover {
+
+  border-left: 5px solid #EE6352;
 }
 .doc-count {
  text-align: left;
@@ -159,14 +166,14 @@ text-align: left;
 
 .to-do {
 background-color: #EE6352;
-padding: 7px;
+padding: 7px 30px;
 border-radius: 4px;
 color: white;
 }
 
 .complete {
 background-color: rgb(91,166,252);
-padding: 7px;
+padding: 7px 30px;
 border-radius: 4px;
 color: white;
 }

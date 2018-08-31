@@ -2,9 +2,10 @@
   <div class="left-section">
    <div class="links">
     <% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <%= link_to "Profile", user_path(current_user) %>
     <% else %>
-    <%= link_to "Login", new_user_session_path %>
+      <%= link_to "Login", new_user_session_path %>
     <% end %>
    </div>
     <h1>live<strong>translate</strong></h1>
@@ -36,15 +37,18 @@
       </div>
       <div class="section carousel-item3">
         <%= image_tag 'upload.png' %>
+        <h3>Step 1</h3>
         <p>When you upload your document we assign it to a class at one of our accredited partner universities.</p>
       </div>
       <div class="section carousel-item4">
         <%= image_tag 'sections.png' %>
+        <h3>Step 2</h3>
         <p>Students in the class work on sections of the document indiviually and then a teacher moderates the final version during a lesson.
         </p>
       </div>
       <div class="section carousel-item5">
         <%= image_tag 'submit.png' %>
+        <h3>Step 3</h3>
         <p>
           We send your document back to you. <br>
           Your translation is reliable, great value for money and has harnessed the talents of motivated students.
