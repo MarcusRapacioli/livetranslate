@@ -2,7 +2,9 @@
   <div class="translate-container">
     <% @sections.each do |section| %>
       <div class="<%= @section.original_content == section.original_content ? 'selected-card' : 'section-card' %>">
-        <p><%= section.original_content %></p>
+        <% if section.original_content.present? %>
+        <p><%= section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %></p>
+        <% end %>
       </div>
     <% end %>
   </div>
