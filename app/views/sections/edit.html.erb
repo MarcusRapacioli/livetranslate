@@ -1,5 +1,6 @@
-<div class="translate-container">
-  <div class="translate-container">
+<div class="edit-margin"></div>
+<div class="document-scroll">
+  <div class="edit-container">
     <% @sections.each do |section| %>
       <div class="<%= @section.original_content == section.original_content ? 'selected-card' : 'section-card' %>">
         <% if section.original_content.present? %>
@@ -10,18 +11,11 @@
   </div>
 </div>
 
-<div class="translate-container" id="input-field">
-  <div class="student-text">
-    <%= simple_form_for([@document, @section], html: {id: 'fancy-btn'}) do |f| %>
-      <div class="text-box">
-        <%= f.input :final_content, placeholder: "Insert Translation Here", :input_html => {:rows =>5} %>
-      </div>
-      <div class="submit-edit">
-        <%= f.submit "Submit", class: "btn-primary" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="submit-container">
+<div class="edit-container" id="input-field">
+  <%= simple_form_for([@document, @section], html: {id: 'fancy-btn'}) do |f| %>
+    <%= f.input :final_content, placeholder: "Insert Translation Here", :input_html => {:rows =>5}, label: false %>
+  <% end %>
+  <div class="button-container">
     <div class="submit-button">
       <a>
         <span>Submit</span>

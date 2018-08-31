@@ -1,50 +1,44 @@
-.translate-container {
+.edit-margin {
+  margin-top: 5%;
+}
+
+.edit-container {
+  padding-top: 40px;
   width: 750px;
   margin: auto;
+  // .section {
+  //   position: sticky;
+  //   bottom: 0%;
+  //   background-color: white;
+  //   padding-top: 30px;
+  // }
+}
+
+.document-scroll {
+  height: 60vh;
+  overflow: scroll
 }
 
 .section-card {
+  background-color: white;
   padding: 15px;
   margin: 20px;
-  border-radius: 5px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-#translate-card {
-  padding: 20px;
-  border-radius: 5px;
-}
-
-// .original-text {
-//   background-color: white;
-//   border-radius: 10px;
-//   border: solid 1px black;
-// }
-
-.student-text {
-  height: 400px;
-}
-
-#input-field {
-  position: sticky;
-  bottom: 0%;
-  background-color: #F4F4F4;
-  padding-top: 30px;
-}
-
-.text-box {
-  height: 200px;
-  // padding: 20px;
-}
-
-.doc-title {
-  padding: 24px;
-  text-align: center;
+  border-radius: 4px;
 }
 
 .selected-card {
-  background-color: #F1F399;
-  padding: 20px;
-  border-radius: 5px;
+  background: rgb(245,245,245);
+  padding: 15px;
+  border-radius: 4px;
+  border-right: 4px solid #EE6352;
 }
+
+#input-field {
+  bottom: 0px;
+  background-color: white;
+  // position: sticky;
+
+}
+
+
 

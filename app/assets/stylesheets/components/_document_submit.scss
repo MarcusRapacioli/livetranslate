@@ -2,15 +2,16 @@ $primary: #EE6352;
 $success: #28e470;
 $light: #d3d7e0;
 
-.submit-container {
+.button-container {
+  position: sticky;
+  text-align: center;
+  height: 200px;
+
   body {
     background: #eef0f5;
     font-family: Arial;
     font-size: 14px;
   }
-  position: sticky;
-  bottom: 10%;
-  text-align: center;
 }
 
 .submit-button {
@@ -25,7 +26,7 @@ $light: #d3d7e0;
   div {
     span {
       position: absolute;
-      background: $success;
+      background: #12EE35;
       height: 4px;
       left: 0;
       top: 0;
@@ -58,16 +59,17 @@ $light: #d3d7e0;
     width: 100%;
     text-align: center;
     color: #fff;
-    box-shadow: 0 2px 6px rgba(170, 185, 200, 0.4);
+    text-decoration: none;
+    // box-shadow: 0 2px 6px rgba(170, 185, 200, 0.4);
   }
-  border-radius: 28px;
+  border-radius: 6px;
   position: absolute;
   left: 50%;
   bottom: 50%;
   display: block;
-  background: #fff;
+  background: $primary;
   width: 150px;
-  box-shadow: 0 2px 6px rgba(170, 185, 200, 0.4);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
