@@ -34,7 +34,7 @@ class SectionsController < ApplicationController
          @section.status = "Complete"
     end
     if @section.update(section_params)
-      redirect_to document_sections_path(@document)
+      redirect_to user_path(current_user)
     else
       render :edit
     end
