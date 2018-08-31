@@ -26,6 +26,7 @@ class SectionsController < ApplicationController
   def edit
     @sections = @document.sections.order(:order)
     @students = @document.lesson.students
+
   end
 
   def update
