@@ -1,6 +1,6 @@
 .flex-container {
 display:flex;
-background: rgb(245,245,245);
+background: white;
 
 }
 
@@ -10,22 +10,36 @@ background: rgb(245,245,245);
   width: 25%;
   text-align: center;
   margin: 40px;
-  background: white;
-  box-shadow: 0px 0px 1px 1px lightgrey;
+  background: rgb(245,245,245);
+  box-shadow: 0px 0px 1px 1px rgb(245,245,245);
+  padding: 30px;
+  border-radius: 4px;
 
+}
+
+.name {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.institution {
+  // margin-top: 5px;
+  font-size: 15px;
+  font-weight: lighter;
 }
 
 .tab-content {
 }
 
-.profile img {
-
-  width: 200px;
+.avatar img {
+  width: 150px;
   border-radius: 50%;
+  border: 5px solid white;
 }
 
+
 .profile {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid rgb(220,220,220);
     padding: 20px;
 }
 
@@ -35,12 +49,19 @@ background: rgb(245,245,245);
 
 .bars a {
   text-decoration: none;
-  text-align: right;
+  text-align: left;
 
 .bars {
   // border-left: 4px solid #EE6352;
   color: #919193;
 }
+
+}
+.lesson-name {
+  color: rgb(51,51,51);
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
 
 }
 
@@ -50,5 +71,30 @@ background: rgb(245,245,245);
   text-align: center;
   margin: 40px;
   background: white;
-  box-shadow: 0px 0px 1px 1px lightgrey;
+  border-radius: 4px;
+}
+
+.active  a {
+  background-color: white !important ;
+  color: rgb(51,51,51) !important ;
+  border-right: 4px solid #EE6352;
+}
+
+.nav li a {
+color: rgb(150,150,150);
+ padding-top: 12px;
+ padding-bottom: 12px;
+}
+.nav li a:hover {
+  background-color: rgba(236, 100, 86, 0.6);
+  color: white;
+}
+
+.nav li a:focus {
+  background-color: white;
+  color: rgb(51,51,51);
+}
+
+.bars li {
+  margin-top: 20px;
 }
