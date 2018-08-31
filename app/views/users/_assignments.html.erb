@@ -7,8 +7,16 @@
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
        </div>
-    <div class="completed">
-      <p>Status:</p>
+    <div class="status">
+      <% if t.sections.find_by(student: current_user).status == "Complete" %>
+      <div class="complete">
+        <%= t.sections.find_by(student: current_user).status %>
+      </div>
+      <% else %>
+      <div class="to-do">
+        <%= t.sections.find_by(student: current_user).status %>
+      </div>
+      <% end %>
     </div>
  </div>
 <% end %>
