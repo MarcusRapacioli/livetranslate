@@ -31,7 +31,10 @@
        <div class="lesson-name">
          <%= lesson.name %>
        </div>
-       <%= render 'assignments' %>
+        <div class="doc-count">
+         <p><%= lesson.documents.count %> assignments</p>
+        </div>
+       <%= render 'assignments', lesson: lesson %>
      </div>
     <% end %>
   </div>
