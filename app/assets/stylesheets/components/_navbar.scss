@@ -21,11 +21,13 @@ border-bottom: 2px solid transparent;
 padding-bottom: 10px;
 }
 
-.nav-link:hover {
-text-decoration: none;
-color: #EE6352;
-border-bottom: 2px solid #EE6352;
+.nav-link:hover, .nav-link-underlined {
+  text-decoration: none;
+  color: #EE6352;
+  border-bottom: 2px solid #EE6352;
 }
+
+
 
 /* Logo */
 .navbar-wagon-brand img {

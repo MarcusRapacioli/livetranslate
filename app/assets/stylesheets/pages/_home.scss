@@ -12,6 +12,7 @@
   justify-content: center;
   width: 50vw;
   height: 100vh;
+  position: relative;
  }
 
 
@@ -117,6 +118,12 @@
  margin-bottom: -30px;
  color: rgb(245,245,245);
 }
+
+.right-section h3 {
+ margin-top: 20px ;
+ margin-bottom: -30px;
+ color: white;
+}
 .right-section p {
   font-size: 26px;
   font-weight: lighter;
@@ -140,15 +147,20 @@
   background: #EE6352;
 }
 
-.links a {
+.links {
+  // display: flex;
   position: absolute;
   top: 25px;
   left: 30px;
+}
+
+.links a {
   font-size: 15px;
   text-decoration: none;
   color: #919193;
   padding-bottom: 10px;
   border-bottom: 2px solid transparent;
+  margin-right: 25px;
 }
 
 .links a:hover {
