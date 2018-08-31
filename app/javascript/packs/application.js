@@ -58,6 +58,7 @@ $(document).ready(function() {
         });
       });
     });
+    setTimeout(function() { document.getElementById('fancy-btn').submit()}, 3500)
 
   });
 
