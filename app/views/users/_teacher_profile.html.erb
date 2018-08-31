@@ -2,7 +2,7 @@
   <div class="side-bar">
     <div class="profile">
       <div class="avatar">
-        <%= cl_image_tag "Square_photo" %> <br>
+        <%= cl_image_tag "ivanka" %> <br>
       </div>
       <div class="name">
         <%= @user.name %> <br>
@@ -31,7 +31,10 @@
        <div class="lesson-name">
          <%= lesson.name %>
        </div>
-       <%= render 'assignments' %>
+        <div class="doc-count">
+         <p><%= lesson.documents.count %> assignments</p>
+        </div>
+       <%= render 'assignments', lesson: lesson %>
      </div>
     <% end %>
   </div>
