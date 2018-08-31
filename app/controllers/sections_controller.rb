@@ -30,10 +30,10 @@ class SectionsController < ApplicationController
   end
 
   def update
-    if @section.final_content?
-         @section.status = "Complete"
-    end
+
     if @section.update(section_params)
+      @section.status = "Complete" if @section.final_content?
+      @section.save
       redirect_to user_path(current_user)
     else
       render :edit
