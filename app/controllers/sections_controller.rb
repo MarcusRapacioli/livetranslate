@@ -33,7 +33,7 @@ class SectionsController < ApplicationController
          @section.status = "Complete"
     end
     if @section.update(section_params)
-      redirect_to document_sections_path(@document)
+       redirect_to document_sections_path(@document)
     else
       render :edit
     end
@@ -49,7 +49,7 @@ class SectionsController < ApplicationController
   private
 
   def section_params
-    params.require(:section).permit(:document_id, :final_content, :status)
+    params.require(:section).permit(:document_id, :final_content, :status, :original_content, :order)
   end
 
   def set_section
