@@ -16,7 +16,7 @@ import { openCity } from '../components/tabs';
 
 $(document).ready(function() {
 
-  $(".submit-button-2 a span").click(function() {
+  $(".submit-button a span").click(function() {
     var btn = $(this).parent().parent();
     var loadSVG = btn.children("a").children(".load");
     var loadBar = btn.children("div").children("span");

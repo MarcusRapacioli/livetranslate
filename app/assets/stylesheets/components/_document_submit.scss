@@ -2,12 +2,12 @@ $primary: #3f82d7;
 $success: #28e470;
 $light: #d3d7e0;
 
-body {
-  background: #eef0f5;
-  font-family: Arial;
-  font-size: 14px;
-}
 .submit-container {
+  body {
+    background: #eef0f5;
+    font-family: Arial;
+    font-size: 14px;
+  }
   position: sticky;
   bottom: 10%;
   text-align: center;
