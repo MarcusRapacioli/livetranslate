@@ -1,4 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
+  require 'clearbit'
 
   private
 

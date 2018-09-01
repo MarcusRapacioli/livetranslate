@@ -2,7 +2,7 @@
   <div class="side-bar">
     <div class="profile">
       <div class="avatar">
-        <%= cl_image_tag "steve" %> <br>
+        <img src="https://logo.clearbit.com/<%= @user.institution %>.com?size=450">
       </div>
       <div class="name">
         <%= @user.name %> <br>
@@ -13,32 +13,74 @@
     </div>
     <div class="bars">
       <ul style= "" class="nav" role="tablist">
-        <li role="presentation" class="active"><a href="#translated" aria-controls="translated" role= "tab" data-toggle="tab">Translated</a></li>
-        <li role="presentation" class=""><a href="#pending" aria-controls="pending" role= "tab" data-toggle="tab">Pending</a></li>
-    </ul>
-
+        <li role="presentation" class="active"><a href="#translated" aria-controls="translated" role="tab" data-toggle="tab">Translated</a></li>
+        <li role="presentation"><a href="#pending" aria-controls="pending" role="tab" data-toggle="tab">Work in progress</a></li>
+        <li role="presentation"><a href="#uploaded" aria-controls="uploaded" role="tab" data-toggle="tab">Uploaded</a></li>
+      </ul>
     </div>
   </div>
 
+  <!-- Tab panes -->
   <div class="page">
-    <div class="tab-content">
-    <% if @user.documents.empty? %>
-      <h1>Please upload a document for translation</h1>
-    <% end %>
-    <% @documents.each_with_index do |document, index| %>
-      <div role="tabpanel" class="tab-pane <%= 'active' if index == 0 %>" id="Translated">
-       <div class="lesson-name">
-        Translated
-        </div>
-        <div class="doc-count">
-         <p><%= @documents.count %></p>
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="translated">
+          <div class="lesson-name">
+         <h1>Translated Documents</h1>
        </div>
-        <div class="doc-count">
+          <div class="doc-count">
+        <p><%= @documents.to_a.count %> documents</p>
         </div>
-        <%= render 'documents'%>
+      <% @documents.each do |document|  %>
+        <% if document.final_content? %>
+     <div class="assignment">
+      <div class="doc-name">
+        <p><%= document.title %></p>
      </div>
-    <% end %>
+      </div>
+        <% end %>
+      <% end %>
+      </div>
+
+    <div role="tabpanel" class="tab-pane" id="pending">
+          <div class="lesson-name">
+         <h1>Pending Documents</h1>
+       </div>
+          <div class="doc-count">
+          <p><%= @documents.to_a.count %> documents</p>
+        </div>
+        <% @documents.each do |document|  %>
+        <% if document.student_content? %>
+     <div class="assignment">
+      <div class="doc-name">
+        <p<%= document.title %></p>
+     </div>
+      </div>
+        <% end %>
+      <% end %>
+      </div>
+
+      <div role="tabpanel" class="tab-pane" id="uploaded">
+              <div class="lesson-name">
+             <h1>Uploaded Documents</h1>
+           </div>
+          <div class="doc-count">
+          <p><%= @documents.to_a.count %> documents</p>
+              </div>
+              <% @documents.each do |document| %>
+           <div class="assignment">
+            <div class="doc-name">
+              <p><%= document.title %></p>
+           </div>
+          </div>
+          <% end %>
+      </div>
+
+    </div>
+
   </div>
-  </div>
-</div>s
+</div>
+
+
+
+
 
