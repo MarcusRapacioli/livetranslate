@@ -178,3 +178,11 @@ border-radius: 4px;
 color: white;
 }
 
+.btn-upload {
+  color: white !important ;
+  background-color: #EE6352;
+  &:hover {
+    color: rgb(51,51,51)
+  }
+}
+
