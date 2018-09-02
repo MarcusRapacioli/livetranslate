@@ -10,11 +10,12 @@
 
 <%= simple_form_for(@document) do |f| %>
   <!-- [...] -->
-  <%= f.input :title, placeholder: "Title" %>
+  <%= f.input :title, placeholder: "Title", input_html: { class: "input" } %>
   <%= f.association :lesson %>
-  <%= f.input :pdf %>
-  <%= f.input :pdf_cache, as: :hidden %>
-
-  <%= f.submit "Upload your document" %>
+  <%= f.input :pdf, class: "choosefile" %>
+  <%= f.input :pdf_cache, as: :hidden, class: "choosefile" %>
+<div class="button-flex">
+  <%= f.submit "Upload", class: "upload" %>
+</div>
   <!-- [...] -->
 <% end %>
