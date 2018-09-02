@@ -1,0 +1,23 @@
+<% documents = lesson.documents %>
+<% documents.each do |t| %>
+ <div class="assignment">
+       <div class="doc-name">
+      <%= link_to edit_document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
+        <%= t.title %>
+        <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+       </div>
+      <% end %>
+    <div class="status">
+      <% if t.final_content? %>
+      <div class="complete">
+        Complete
+      </div>
+      <% elsif %>
+        <a type="button" class="btn btn-upload to-do">live<strong>Translate</strong></a>
+      <% else %>
+        <a type="button" class="btn btn-upload to-do">Allocate</strong></a>
+      <% end %>
+    </div>
+ </div>
+    <% end %>
+
