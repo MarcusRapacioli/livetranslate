@@ -1,0 +1,99 @@
+<div class="flex-container">
+  <div class="side-bar">
+    <div class="profile">
+      <div class="avatar">
+        <img src="https://logo.clearbit.com/<%= @user.institution %>.com?size=450">
+      </div>
+      <div class="name">
+        <%= @user.name %> <br>
+      </div>
+      <div class="institution">
+        <%= @user.institution %>
+      </div>
+    </div>
+    <div class="bars">
+      <ul style= "" class="nav" role="tablist">
+        <li role="presentation" class="active"><a href="#translated" aria-controls="translated" role="tab" data-toggle="tab">Translated</a></li>
+        <li role="presentation"><a href="#pending" aria-controls="pending" role="tab" data-toggle="tab">Work in progress</a></li>
+        <li role="presentation"><a href="#uploaded" aria-controls="uploaded" role="tab" data-toggle="tab">View all</a></li>
+        <li role="presentation"><a type="button" class="btn btn-upload" data-toggle="modal" data-target="#myModal">Upload</button></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tab panes -->
+  <div class="page">
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="translated">
+          <div class="lesson-name">
+         <h1>Translated Documents</h1>
+       </div>
+          <div class="doc-count">
+        <p><%= @documents.to_a.count %> documents</p>
+        </div>
+      <% @documents.each do |document|  %>
+        <% if document.final_content? %>
+     <div class="assignment">
+      <div class="doc-name">
+        <p><%= document.title %></p>
+     </div>
+      </div>
+        <% end %>
+      <% end %>
+      </div>
+
+    <div role="tabpanel" class="tab-pane" id="pending">
+          <div class="lesson-name">
+         <h1>Pending Documents</h1>
+       </div>
+          <div class="doc-count">
+          <p><%= @documents.to_a.count %> documents</p>
+        </div>
+        <% @documents.each do |document|  %>
+        <% if document.student_content? %>
+     <div class="assignment">
+      <div class="doc-name">
+        <p<%= document.title %></p>
+     </div>
+      </div>
+        <% end %>
+      <% end %>
+      </div>
+
+      <div role="tabpanel" class="tab-pane" id="uploaded">
+              <div class="lesson-name">
+             <h1>Uploaded Documents</h1>
+           </div>
+          <div class="doc-count">
+          <p><%= @documents.to_a.count %> documents</p>
+              </div>
+              <% @documents.each do |document| %>
+           <div class="assignment">
+            <div class="doc-name">
+              <p><%= document.title %></p>
+           </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Upload a document</h4>
+      </div>
+      <div class="modal-body">
+           <%= render 'documents/form', document: @document %>
+      </div>
+    </div>s
+  </div>
+</div>
+</div>
+
+
+
+
+

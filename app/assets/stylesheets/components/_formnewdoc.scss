@@ -1,0 +1,28 @@
+.input {
+    border-right: 4px solid #EE6352;
+    border-radius: 0px;
+}
+
+.choosefile {
+  text-align: center;
+}
+
+.upload {
+    color: white !important ;
+  background-color: #EE6352;
+
+    text-decoration: none;
+  text-align: left;
+      font-family: "Nunito", "Helvetica", "sans-serif";
+      border-radius: 2px;
+      padding-top: 12px;
+    padding-bottom: 12px;
+    width: 138.5px;
+    border: none;
+    text-align: center;
+}
+
+.button-flex {
+  display: flex;
+  justify-content: flex-end;
+}

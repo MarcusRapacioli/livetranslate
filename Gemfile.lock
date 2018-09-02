@@ -61,6 +61,8 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    clearbit (0.2.8)
+      nestful (~> 1.1.0)
     cliver (0.3.2)
     cloudinary (1.9.1)
       aws_cf_signer
@@ -116,6 +118,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    nestful (1.1.3)
     netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
@@ -244,6 +247,7 @@ DEPENDENCIES
   bootsnap
   bootstrap-sass (~> 3.3)
   carrierwave (~> 1.2)
+  clearbit
   cloudinary
   devise
   docsplit (~> 0.7.6)

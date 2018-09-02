@@ -1,4 +1,5 @@
 import "bootstrap";
+//= require bootstrap-modals
 
 // Profile tabs
 import { openCity } from '../components/tabs';
