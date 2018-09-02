@@ -13,7 +13,7 @@
     </div>
     <div class="bars">
       <ul style= "" class="nav" role="tablist">
-      <% @user.attended_lessons.each_with_index do |lesson, index| %>
+      <% @user.taught_lessons.each_with_index do |lesson, index| %>
         <li role="presentation" class="<%= 'active' if index == 0 %>"><a href="#<%= lesson.slug %>" aria-controls="<%= lesson.slug %>" role= "tab" data-toggle="tab"><%= lesson.name %></a></li>
       <% end %>
     </ul>
@@ -23,10 +23,10 @@
 
   <div class="page">
     <div class="tab-content">
-    <% if @user.attended_lessons.empty? %>
+    <% if @user.taught_lessons.empty? %>
       <h1>mate no lessons</h1>
     <% end %>
-    <% @user.attended_lessons.each_with_index do |lesson, index| %>
+    <% @user.taught_lessons.each_with_index do |lesson, index| %>
       <div role="tabpanel" class="tab-pane <%= 'active' if index == 0 %>" id="<%= lesson.slug %>">
        <div class="lesson-name">
          <%= lesson.name %>
@@ -34,7 +34,7 @@
         <div class="doc-count">
          <p><%= lesson.documents.count %> assignments</p>
         </div>
-       <%= render 'assignments', lesson: lesson %>
+       <%= render 'lessons', lesson: lesson %>
      </div>
     <% end %>
   </div>
