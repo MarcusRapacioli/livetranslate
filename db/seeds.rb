@@ -14,7 +14,7 @@ User.destroy_all
 
 User.create!(first_name: "Donald", last_name: "Trump", email: "donald@me.com", password: "moolah123", user_type: "Teacher", institution: "Trump U")
 ivanka = User.create!(first_name: "Ivanka", last_name: "Trump", email: "ivanka@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
-User.create!(first_name: "Vlad", last_name: "Putin", email: "vlad@me.com", password: "moolah123", user_type: "Business", institution: "Kremlin")
+User.create!(first_name: "Vlad", last_name: "Putin", email: "vlad@me.com", password: "moolah123", user_type: "Business", institution: "Bose")
 User.create!(first_name: "Jared", last_name: "Trump", email: "jared@me.com", password: "moolah123", user_type: "Teacher", institution: "Trump U")
 
 
@@ -34,5 +34,3 @@ french = Lesson.create!(lesson_name: "French 3A", teacher: User.third)
   StudentLesson.create!(student: student, lesson: american)
   StudentLesson.create!(student: student, lesson: french)
 end
-
-
