@@ -31,7 +31,7 @@
 
   </head>
   <body>
-    <% unless action_name == "home" %>
+    <% unless action_name == "home" or action_name == "sessions#new" %>
     <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
