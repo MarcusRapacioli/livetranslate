@@ -13,9 +13,9 @@
     </div>
     <div class="bars">
       <ul style= "" class="nav" role="tablist">
-        <li role="presentation" class="active"><a href="#translated" aria-controls="translated" role="tab" data-toggle="tab">Translated</a></li>
+        <li role="presentation" class="active"><a href="#uploaded" aria-controls="uploaded" role="tab" data-toggle="tab">View all</a></li>
         <li role="presentation"><a href="#pending" aria-controls="pending" role="tab" data-toggle="tab">Work in progress</a></li>
-        <li role="presentation"><a href="#uploaded" aria-controls="uploaded" role="tab" data-toggle="tab">View all</a></li>
+        <li role="presentation"><a href="#translated" aria-controls="translated" role="tab" data-toggle="tab">Translated</a></li>
         <li role="presentation"><a type="button" class="btn btn-upload" data-toggle="modal" data-target="#myModal">Upload</button></a></li>
       </ul>
     </div>
@@ -24,35 +24,44 @@
   <!-- Tab panes -->
   <div class="page">
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="translated">
-          <div class="lesson-name">
-         <h1>Translated Documents</h1>
-       </div>
+<div role="tabpanel" class="tab-pane active" id="uploaded">
+              <div class="lesson-name">
+             <h1>Uploaded Documents</h1>
+           </div>
           <div class="doc-count">
-            <% i = 0 %>
+                   <% i = 0 %>
             <% @documents.each do |document| %>
-            <% if document.final_content? %>
+            <% if document.pdf? %>
               <% i += 1 %>
               <% end %>
             <% end %>
           <p><%= i %> documents</p>
-        </div>
-      <% @documents.each do |document|  %>
-        <% if document.final_content? %>
-     <div class="assignment">
-      <div class="doc-name">
-        <p><%= document.title %></p>
+              </div>
 
-     </div>
-
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'document_id', document.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
-
-      </div>
-        <% end %>
-      <% end %>
+              <% @documents.each do |document| %>
+                <div class="assignment">
+                  <div class="doc-name">
+                    <%= link_to edit_document_section_path(document, document), id: "preview_#{document.id}", class: "preview_link" do %>
+                      <%= document.title %>
+                      <%= cl_image_tag document.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+                    <% end %>
+                  </div>
+                  <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#payment-<%= document.id %>">Purchase</button></a>
+                  <div class="modal fade" id="payment-<%= document.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Payment</h4>
+                        </div>
+                        <div class="modal-body">
+                         <%= render 'payments/paymentform', order: document.order, document: document %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
       </div>
 
     <div role="tabpanel" class="tab-pane" id="pending">
@@ -68,40 +77,50 @@
             <% end %>
           <p><%= i %> documents</p>
         </div>
-        <% @documents.each do |document|  %>
-        <% if document.student_content? %>
+        <% @documents.each do |t|  %>
+        <% if t.student_content? %>
      <div class="assignment">
       <div class="doc-name">
-        <p<%= document.title %></p>
+        <%= link_to edit_document_section_path(t, t), id: "preview_#{t.id}", class: "preview_link" do %>
+        <%= t.title %>
+        <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+        <% end %>
      </div>
       </div>
         <% end %>
       <% end %>
       </div>
 
-      <div role="tabpanel" class="tab-pane" id="uploaded">
-              <div class="lesson-name">
-             <h1>Uploaded Documents</h1>
-           </div>
+    <div role="tabpanel" class="tab-pane" id="translated">
+          <div class="lesson-name">
+         <h1>Translated Documents</h1>
+       </div>
           <div class="doc-count">
+            <% i = 0 %>
             <% @documents.each do |document| %>
-            <% if document.pdf? %>
+            <% if document.final_content? %>
               <% i += 1 %>
               <% end %>
             <% end %>
           <p><%= i %> documents</p>
-              </div>
-              <% @documents.each do |document| %>
-           <div class="assignment">
-            <div class="doc-name">
-              <p><%= document.title %></p>
-           </div>
-          </div>
-          <% end %>
+        </div>
+      <% @documents.each do |t|  %>
+        <% if t.final_content? %>
+     <div class="assignment">
+      <div class="doc-name">
+        <%= link_to edit_document_section_path(t, t), id: "preview_#{t.id}", class: "preview_link" do %>
+        <%= t.title %>
+        <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+        <% end %>
+     </div>
+     <a type="button" class="btn btn-upload" data-toggle="modal" data-target="#download">Download</button></a>
+      </div>
+        <% end %>
+      <% end %>
       </div>
     </div>
   </div>
-  <!-- Modal -->
+  <!-- Modal for upload -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -112,7 +131,7 @@
       <div class="modal-body">
            <%= render 'documents/form', document: @document %>
       </div>
-    </div>s
+    </div>
   </div>
 </div>
 </div>

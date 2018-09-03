@@ -1,0 +1,20 @@
+<div class="payment">
+<p>Translation of <%= document.title %></p>
+<%= form_tag order_payments_path(order) do %>
+<div class="align">
+  <article>
+    <label class="amount">
+      <span>Price: <%= humanized_money_with_symbol(order.amount) %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    data-name="New Upload"
+    data-email="<%= current_user.email %>"
+    data-description="<%=document.title  %>"
+    data-amount="<%= order.amount_cents %>"
+    data-currency="<%= order.amount.currency %>"></script>
+</div>
+<% end %>
+</div>

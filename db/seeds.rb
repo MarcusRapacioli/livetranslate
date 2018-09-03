@@ -8,6 +8,7 @@
 
 StudentLesson.destroy_all
 Section.destroy_all
+Order.destroy_all
 Document.destroy_all
 Lesson.destroy_all
 User.destroy_all
