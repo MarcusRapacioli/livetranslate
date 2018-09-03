@@ -16,7 +16,6 @@
   <%= f.input :pdf_cache, as: :hidden, class: "choosefile" %>
 <div class="button-flex">
   <%= f.submit "Upload", class: "upload" %>
-  <div class="upload">Amount: <%= humanized_money_with_symbol(@document.price) %></div>
 </div>
   <!-- [...] -->
 <% end %>
