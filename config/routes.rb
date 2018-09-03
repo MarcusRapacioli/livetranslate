@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :lessons
   resources :student_lessons
   resources :users
+    resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
+  end
 end

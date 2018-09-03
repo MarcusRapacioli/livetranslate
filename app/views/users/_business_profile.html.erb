@@ -29,14 +29,27 @@
          <h1>Translated Documents</h1>
        </div>
           <div class="doc-count">
-        <p><%= @documents.to_a.count %> documents</p>
+            <% i = 0 %>
+            <% @documents.each do |document| %>
+            <% if document.final_content? %>
+              <% i += 1 %>
+              <% end %>
+            <% end %>
+          <p><%= i %> documents</p>
         </div>
       <% @documents.each do |document|  %>
         <% if document.final_content? %>
      <div class="assignment">
       <div class="doc-name">
         <p><%= document.title %></p>
+
      </div>
+
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'document_id', document.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
+
       </div>
         <% end %>
       <% end %>
@@ -47,7 +60,13 @@
          <h1>Pending Documents</h1>
        </div>
           <div class="doc-count">
-          <p><%= @documents.to_a.count %> documents</p>
+            <% i = 0 %>
+            <% @documents.each do |document| %>
+            <% if document.student_content? %>
+              <% i += 1 %>
+              <% end %>
+            <% end %>
+          <p><%= i %> documents</p>
         </div>
         <% @documents.each do |document|  %>
         <% if document.student_content? %>
@@ -65,7 +84,12 @@
              <h1>Uploaded Documents</h1>
            </div>
           <div class="doc-count">
-          <p><%= @documents.to_a.count %> documents</p>
+            <% @documents.each do |document| %>
+            <% if document.pdf? %>
+              <% i += 1 %>
+              <% end %>
+            <% end %>
+          <p><%= i %> documents</p>
               </div>
               <% @documents.each do |document| %>
            <div class="assignment">
@@ -92,8 +116,6 @@
   </div>
 </div>
 </div>
-
-
 
 
 

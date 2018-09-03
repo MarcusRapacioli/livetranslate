@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_163407) do
+ActiveRecord::Schema.define(version: 2018_09_03_095929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_163407) do
     t.bigint "user_id"
     t.bigint "lesson_id"
     t.string "pdf"
+    t.integer "price_cents", default: 0, null: false
     t.index ["lesson_id"], name: "index_documents_on_lesson_id"
     t.index ["user_id"], name: "index_documents_on_user_id"
   end
@@ -34,6 +35,16 @@ ActiveRecord::Schema.define(version: 2018_08_30_163407) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_lessons_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "sections", force: :cascade do |t|
@@ -73,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_08_30_163407) do
   add_foreign_key "documents", "lessons"
   add_foreign_key "documents", "users"
   add_foreign_key "lessons", "users"
+  add_foreign_key "orders", "users"
   add_foreign_key "sections", "documents"
   add_foreign_key "sections", "users"
   add_foreign_key "student_lessons", "lessons"
