@@ -53,10 +53,8 @@
 // }
 
 .edit-container {
-  background-color: white;
-  // width: 93%;
-  // height: 300px;
-  box-shadow: 0px 0px 6px 1px rgb(200,200,200);
+  background-color: transparent;
+ padding: 0px;
   width: 40vw;
 
 }
@@ -64,24 +62,26 @@
 .edit-container form textarea {
 text-decoration: none;
   background-color: white;
-  margin: 20px 20px 20px 20px;
-  padding: 20px 20px 20px 40px;
+  // margin: 20px 20px 20px 20px;
+  // padding: 20px 20px 20px 40px;
     transition: all 0.2s;
     box-shadow: none;
      resize: both;
   border: none;
   outline: none;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 400px;
   text-size: 13px;
+    box-shadow: 0px 0px 6px 1px rgb(200,200,200);
+
 }
 
 .edit-container form textarea:focus {
   text-decoration: none;
   background-color: white;
-  // box-shadow: 0px 0px 6px 1px rgb(200,200,200);
-  margin: 20px 20px 0px 20px;
-  padding: 20px 20px 20px 40px;
+  box-shadow: 0px 0px 6px 1px rgb(200,200,200);
+  // margin: 20px 20px 0px 20px;
+  // padding: 20px 20px 20px 40px;
     // border-left: 8px solid #EE6352;
     transition: all 0.2s;
     outline: none;
@@ -98,9 +98,10 @@ text-decoration: none;
 }
 
 .ed {
-  margin-left: 100px;
-  margin-right: 100px;
+  padding: 50px 0px 0px 0px;
+  margin: 0px 50px 50px 50px;
   display: flex;
   justify-content: space-between;
+  height: 70vh;
 }
 

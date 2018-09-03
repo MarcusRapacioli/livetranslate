@@ -1,6 +1,10 @@
 <div class="ed">
   <div class="edit-margin"></div>
   <div class="document-scroll">
+      <div class="edit-header">
+      <h4>ORIGINAL DOCUMENT</h4>
+      <h3><%= @document.title %></h3>
+      </div>
     <div class="e-container">
       <% @sections.each do |section| %>
         <div class="<%= @section.original_content == section.original_content ? 'selected-card' : 'section-card' %>">
@@ -14,10 +18,10 @@
 
 <div class="edit-container">
   <div class="edit-header">
-     <h4>Your translation</h4>
+     <h4>YOUR TRANSLATION</h4>
   </div>
   <%= simple_form_for([@document, @section], html: {id: 'fancy-btn'}) do |f| %>
-    <%= f.input :final_content, placeholder: "Insert Translation Here", :input_html => {:rows =>5}, label: false %>
+    <%= f.input :final_content, :input_html => {:rows =>5}, label: false %>
   <% end %>
 </div>
 </div>
