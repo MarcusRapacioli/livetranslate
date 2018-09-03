@@ -1,12 +1,34 @@
 <div class="lt">
-  <h2>LiveTranslate</h2>
-  <div class="flex-container">
-    <div class="original">
-      <h2><%= @document.title %></h2>
+  <h2>Live<strong>Translate</strong></h2>
+  <div class="flex-container-lt">
+    <div class="original-container">
+      <h3><%= @document.title %></h3>
+      <div class="original">
       <p><%= @document.original_content %></p>
+      </div>
     </div>
-    <div class="student">
-
+    <div class="student-container">
+      <h3> <%=@document.title%> </h3>
+      <div class="student">
+      <% @sections.each do |section| %>
+        <div id="section-<%= section.id %>">
+        <%= link_to edit_document_path(@document, section: section.id), remote: true do %>
+          <div class="section">
+            <div class="section-text">
+              <% if section.final_content.present? %>
+              <%= simple_format(section.final_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ")) %>
+              <% else %>
+                <%# text_field_tag 'test', section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %>
+                <%= simple_format(section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ")) %>
+              <% end %>
+            </div>
+            <%= cl_image_tag "robin" %>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
     </div>
   </div>
 </div>
+

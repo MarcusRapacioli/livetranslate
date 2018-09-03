@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :documents do
-    resources :sections
+    resources :sections do
+      member do
+        patch "teacher_update", to: "sections#teacher_update"
+      end
+    end
   end
   resources :lessons
   resources :student_lessons

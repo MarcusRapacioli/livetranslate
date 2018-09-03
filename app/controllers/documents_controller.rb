@@ -40,6 +40,13 @@ class DocumentsController < ApplicationController
   def edit
     @sections = @document.sections.order(:order)
     @students = @document.lesson.students
+    if params[:section]
+      @section = Section.find(params[:section])
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update

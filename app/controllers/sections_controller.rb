@@ -40,6 +40,13 @@ class SectionsController < ApplicationController
     end
   end
 
+  def teacher_update
+    @section = Section.find(params[:id])
+    @section.final_content = params[:final_content]
+    @section.save!
+    redirect_to edit_document_path(@section.document)
+  end
+
   def destroy
     @section.destroy
     redirect_to document_sections_path(@document)

@@ -1,6 +1,7 @@
-<%= simple_form_for([document, section]) do |f| %>
-<%= f.association :student, collection: @students, placeholder: "Student Name" %>
-<%= f.input :original_content, placeholder: "Original Content" %>
+<%= cl_image_tag "robin" %>
+<%= form_tag(teacher_update_document_section_path(@document, @section), method: 'patch') do |f| %>
+<%#= f.association :student, collection: @students, placeholder: "Student Name" %>
+<%= text_area_tag :final_content, section.original_content, id: "section-#{section.id}-content" %>
 <%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
-<%= f.submit "Submit" %>
+<%= submit_tag "Submit" %>
 <% end %>
