@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @document = Document.find(params[:id])
+    @document = Document.new
     @documents = @user.documents
   end
 
