@@ -1,3 +1,15 @@
-<h1>Document is created</h1>
-<h2><%= @document.title %></h2>
-<%= link_to "Delete", document_path, method: :delete %>
+<div class="center-text success">
+  <%= image_tag "document-upload.svg", :id => "upload-image"%>
+  <h3><%= @document.title %></h3>
+  <h3 >Upload Successfull</h3>
+  <h3>Thank you for uploading a document to live<strong>translate</strong></h3>
+</div>
+
+
+<div class="preview center-text">
+  <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+</div>
+
+<div class="center-text delete-document">
+  <%= link_to "Back to your profile", user_path, :class => "button delete-document" %>
+</div>

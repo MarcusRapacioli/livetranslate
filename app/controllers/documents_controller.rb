@@ -17,6 +17,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -51,8 +52,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    redirect_to root_path
-
+    redirect_to user_path
   end
 
   private
