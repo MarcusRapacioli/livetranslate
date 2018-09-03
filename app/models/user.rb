@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :student_lessons
   has_many :attended_lessons, through: :student_lessons, source: :lesson
   has_many :taught_lessons, class_name: 'Lesson', foreign_key: 'user_id'
+  has_many :orders
 
   def name
     "#{first_name} #{last_name}"

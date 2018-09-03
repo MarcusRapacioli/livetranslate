@@ -27,9 +27,8 @@ class DocumentsController < ApplicationController
 
   def create
     @document = Document.new(document_params)
-    @document.lesson = Lesson.find(params[:document][:lesson_id].to_i)
     @document.business = current_user
-    if @document.save!
+    if @document.save
       create_sections
       redirect_to document_path(@document)
     else
@@ -58,7 +57,7 @@ class DocumentsController < ApplicationController
 
   def document_params
 
-    params.require(:document).permit(:title, :original_content, :business, :lesson, :pdf)
+    params.require(:document).permit(:title, :original_content, :business, :lesson, :pdf, :lesson_id, :price_cents)
   end
 
   def set_document
