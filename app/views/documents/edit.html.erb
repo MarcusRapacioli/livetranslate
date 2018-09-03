@@ -2,19 +2,23 @@
   <h2>Live<strong>Translate</strong></h2>
   <div class="flex-container-lt">
     <div class="original-container">
-      <h3><%= @document.title %></h3>
+      <div class="original-header">
+        <h4>ORIGNAL DOCUMENT</h4>
+        <h3><%= @document.title %></h3>
+        <h4>CONTENT</h4>
+      </div>
       <div class="original">
-      <p><%= @document.original_content %></p>
+      <p><%= simple_format @document.original_content %></p>
       </div>
     </div>
     <div class="student-container">
-      <h3> <%=@document.title%> </h3>
       <div class="student">
       <% @sections.each do |section| %>
-        <div id="section-<%= section.id %>">
+        <div id="section-<%= section.id %>" style="position: relative;">
         <%= link_to edit_document_path(@document, section: section.id), remote: true do %>
-          <div class="section">
+          <div class="section-whole ">
             <div class="section-text">
+              <span class="tooltiptext"><%= section.student.name %></span>
               <% if section.final_content.present? %>
               <%= simple_format(section.final_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ")) %>
               <% else %>
@@ -22,7 +26,6 @@
                 <%= simple_format(section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ")) %>
               <% end %>
             </div>
-            <%= cl_image_tag "robin" %>
           </div>
         <% end %>
         </div>

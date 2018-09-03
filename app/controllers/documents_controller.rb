@@ -162,7 +162,7 @@ class DocumentsController < ApplicationController
     sentence_array = []
     reader.pages.each do |page|
       clean = page.text.delete("\n")
-      sentence_array << clean.scan(/[^\.\!\?]*[\.\!\?]/)
+      sentence_array << page.text.scan(/[^\.\!\?]*[\.\!\?]/)
     end
 
     sentences = sentence_array.flatten
