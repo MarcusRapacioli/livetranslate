@@ -29,6 +29,7 @@ class DocumentsController < ApplicationController
     @document = Document.new(document_params)
     @document.business = current_user
     if @document.save
+      set_original_content
       create_sections
       redirect_to document_path(@document)
     else
@@ -37,6 +38,8 @@ class DocumentsController < ApplicationController
   end
 
   def edit
+    @sections = @document.sections.order(:order)
+    @students = @document.lesson.students
   end
 
   def update
@@ -142,6 +145,26 @@ class DocumentsController < ApplicationController
   content: [ ],
   order: 4
  }
+
+   def set_original_content
+
+    @document.reload
+    io = open(Cloudinary::Utils.cloudinary_url(@document.pdf))
+    reader = PDF::Reader.new(io)
+
+    sentence_array = []
+    reader.pages.each do |page|
+      clean = page.text.delete("\n")
+      sentence_array << clean.scan(/[^\.\!\?]*[\.\!\?]/)
+    end
+
+    sentences = sentence_array.flatten
+
+    @document.original_content = sentences.join
+
+    @document.save!
+
+   end
 
 
 end
