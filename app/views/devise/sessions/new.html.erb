@@ -18,57 +18,36 @@
 <%# end %>
 
 
+<div class="login-page">
+  <div class="login-left">
+    <%= image_tag "login.svg", :id => "login-image" %>
+  </div>
 
-<h1 align="center">Log in</h1>
+  <div class="login-right">
+    <div class="form-box">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" },
+                      :class  => "inputs" %>
+            <%= f.input :password,
+                      required: false,
+                      input_html: { autocomplete: "current-password" } %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
 
-<%= form_for(resource, as: resource_name, :html => {class: "form-horizontal", role: "form"}, url: session_path(resource_name)) do |f| %>
+          <div class="form-actions">
+          <%= f.button :submit, "Log in" %>
+          </div>
+          <% end %>
 
-<div class="form-group">
+    </div>
 
-<div class="control-label col-sm-2">
-
-<%= f.label :email %>
-
+  </div>
 </div>
 
-<div class="col-sm-8">
 
-<%= f.email_field :email, class: "form-control", placeholder: "Enter email", autofocus: true %>
 
-</div>
-
-</div>
-
-<div class="form-group">
-
-<div class="control-label col-sm-2">
-
-<%= f.label :password %>
-
-</div>
-
-<div class="col-sm-8">
-
-<%= f.password_field :password, class: "form-control", autocomplete: "off" %>
-
-</div>
-
-</div>
-
-<div class="form-group">
-
-<div class="col-sm-offset-2 col-sm-10">
-
-<%= f.submit "Log in", class: 'btn btn-warning btn-lg' %>
-
-</div>
-
-</div>
-
-<% end %>
-
-<div class="col-xs-4 col-xs-offset-2">
-
-<%= render "devise/shared/links" %>
-</div>
 
