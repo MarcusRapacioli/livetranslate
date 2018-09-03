@@ -63,7 +63,7 @@
             <div class="form-inputs">
               <%= f.input :first_name, label: false, placeholder: "First Name" %>
               <%= f.input :last_name, label: false, placeholder: "Surname" %>
-              <%= f.input :user_type, collection: ["Business", "Teacher", "Student"], label: false, placeholder: "User Type" %>
+              <%= f.input :user_type, collection: ["Business", "Teacher", "Student"], label: false, prompt: "Please Select" %>
               <%= f.input :institution, label: false, placeholder: "Institution" %>
               <%= f.input :email,
                           required: true,
