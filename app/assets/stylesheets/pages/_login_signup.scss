@@ -14,8 +14,6 @@
   height: 100vh;
   padding-top: 10vh;
   padding-bottom: 5vh;
-
-
 }
 
 #login-image {
@@ -36,6 +34,7 @@
     margin-top: 20px;
   }
 }
+
 .login-nav {
   .active a {
     background-color: white !important ;
@@ -93,22 +92,23 @@
   top: 5px;
   left: 5px;
   color: white;
+  margin: 15px;
+  text-decoration: none !important;
+  i {
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 70px;
+    width: 70px;
+  }
+  i:hover, i:active {
+    border-radius: 50%;
+    border: solid white;
+  }
 }
 
-#cap-icon {
-  font-size: 1.6em;
-  width: 1.6em;
-  text-align: center;
-  line-height: 1.6em;
-  background: #666;
-  color: #fff;
-  border-radius: 0.8em; /* or 50% width & line-height */
 
-}
-
-// #cap-icon:hover {
-//   box-shadow: 0 0 0 5px #fff, 0 0 0 7px #0A5ACB;
-// }
 
 
 
