@@ -5,7 +5,7 @@ $light: #d3d7e0;
 .button-container {
   position: sticky;
   text-align: center;
-  height: 200px;
+  // height: 200px;
 
   body {
     background: #eef0f5;
@@ -15,6 +15,7 @@ $light: #d3d7e0;
 }
 
 .submit-button {
+  margin-top: 55px;
   svg {
     display: none;
     position: absolute;
@@ -65,7 +66,7 @@ $light: #d3d7e0;
   border-radius: 6px;
   position: absolute;
   left: 50%;
-  bottom: 50%;
+  // bottom: 50%;
   display: block;
   background: $primary;
   width: 150px;

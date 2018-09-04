@@ -1,6 +1,10 @@
-<%= simple_form_for([document, section]) do |f| %>
-<%= f.association :student, collection: @students, placeholder: "Student Name" %>
-<%= f.input :original_content, placeholder: "Original Content" %>
+
+<%= form_tag(teacher_update_document_section_path(@document, @section), method: 'patch') do |f| %>
+<%#= f.association :student, collection: @students, placeholder: "Student Name" %>
+<%= text_area_tag :final_content, section.original_content, id: "section-#{section.id}-content" %>
 <%#= f.input :lesson, collection: @lessons.map { |lesson| lesson.lesson_name } %>
-<%= f.submit "Submit" %>
+<%= button_tag type: 'submit', class: "tick", id: "register-button" do %>
+        <i class="fa fa-check" aria-hidden="true"></i>
+    <% end %>
 <% end %>
+
