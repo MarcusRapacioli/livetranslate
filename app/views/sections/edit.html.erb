@@ -1,20 +1,33 @@
-<div class="edit-margin"></div>
-<div class="document-scroll">
-  <div class="edit-container">
-    <% @sections.each do |section| %>
-      <div class="<%= @section.original_content == section.original_content ? 'selected-card' : 'section-card' %>">
-        <% if section.original_content.present? %>
-        <p><%= section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %></p>
-        <% end %>
-      </div>
-    <% end %>
+<h3 id="ed-title"><%= @document.title %></h3>
+<div class="ed">
+  <div class="doc">
+    <div class="edit-header">
+      <h4>ORIGINAL DOCUMENT</h4>
+    </div>
+
+  <div class="document-scroll">
+    <div class="e-container">
+      <% @sections.each do |section| %>
+        <div class="<%= @section.original_content == section.original_content ? 'selected-card' : 'section-card' %>">
+          <% if section.original_content.present? %>
+          <p><%= section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div class="edit-container" id="input-field">
+<div class="edit-container">
+  <div class="edit-header">
+     <h4>YOUR TRANSLATION</h4>
+  </div>
   <%= simple_form_for([@document, @section], html: {id: 'fancy-btn'}) do |f| %>
-    <%= f.input :final_content, placeholder: "Insert Translation Here", :input_html => {:rows =>5}, label: false %>
+    <%= f.input :final_content, :input_html => {:rows =>5}, label: false %>
   <% end %>
+</div>
+</div>
+
   <div class="button-container">
     <div class="submit-button">
       <a>

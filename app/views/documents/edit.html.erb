@@ -1,2 +1,37 @@
-<%= render 'form', document: @document %>
+<div class="lt">
+  <h2>Live<strong>Translate</strong></h2>
+  <div class="flex-container-lt">
+    <div class="original-container">
+      <div class="original-header">
+        <h4>ORIGNAL DOCUMENT</h4>
+        <h3><%= @document.title %></h3>
+        <h4>CONTENT</h4>
+      </div>
+      <div class="original">
+      <p><%= simple_format @document.original_content %></p>
+      </div>
+    </div>
+    <div class="student-container">
+      <div class="student">
+      <% @sections.each do |section| %>
+        <div id="section-<%= section.id %>" style="position: relative;">
+        <%= link_to edit_document_path(@document, section: section.id), remote: true do %>
+          <div class="section-whole ">
+            <div class="section-text">
+              <span class="tooltiptext"><%= section.student.name %></span>
+              <% if section.final_content.present? %>
+              <%= simple_format(section.final_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ")) %>
+              <% else %>
+                <%# text_field_tag 'test', section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %>
+                <%= simple_format(section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ")) %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 <%= link_to 'Create PDF document', document_path(@document, :format => :pdf) %>

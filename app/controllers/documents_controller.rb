@@ -39,6 +39,7 @@ class DocumentsController < ApplicationController
     @document.business = current_user
     @document.price_cents = 1000
     if @document.save
+      set_original_content
       create_sections
       create_order
       redirect_to user_path(current_user)
@@ -48,6 +49,15 @@ class DocumentsController < ApplicationController
   end
 
   def edit
+    @sections = @document.sections.order(:order)
+    @students = @document.lesson.students
+    if params[:section]
+      @section = Section.find(params[:section])
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update
@@ -156,6 +166,26 @@ class DocumentsController < ApplicationController
   content: [ ],
   order: 4
  }
+
+   def set_original_content
+
+    @document.reload
+    io = open(Cloudinary::Utils.cloudinary_url(@document.pdf))
+    reader = PDF::Reader.new(io)
+
+    sentence_array = []
+    reader.pages.each do |page|
+      clean = page.text.delete("\n")
+      sentence_array << page.text.scan(/[^\.\!\?]*[\.\!\?]/)
+    end
+
+    sentences = sentence_array.flatten
+
+    @document.original_content = sentences.join
+
+    @document.save!
+
+   end
 
 
 end
