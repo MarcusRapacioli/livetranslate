@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_09_04_124043) do
     t.string "title"
     t.text "original_content"
     t.text "student_content"
-    t.text "final_content"
+    t.text "final_content", default: ""
     t.bigint "user_id"
     t.bigint "lesson_id"
     t.string "pdf"

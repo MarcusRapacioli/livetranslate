@@ -61,10 +61,20 @@ class DocumentsController < ApplicationController
   end
 
   def update
-    if @document.update(document_params)
-      redirect_to document_path(@document)
+    if @document.sections.collect(&:final_content).any?{|i| i.nil? }
+       respond_to do |format|
+        format.js { render action: "error.js.erb"}
+      end
     else
-      render :edit
+      @document.final_content = ""
+      @document.sections.order(:order).each do |section|
+        @document.final_content << section.final_content
+      end
+      @document.save!
+      @id = current_user.id
+      respond_to do |format|
+        format.js { render action: "success.js.erb" }
+      end
     end
   end
 
@@ -184,7 +194,6 @@ class DocumentsController < ApplicationController
     @document.original_content = sentences.join
 
     @document.save!
-
    end
 
 
