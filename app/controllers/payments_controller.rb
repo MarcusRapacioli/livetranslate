@@ -24,7 +24,7 @@ class PaymentsController < ApplicationController
     doc.save!
   end
 
-  redirect_to order_path(@order)
+  redirect_to user_path(current_user)
 
   rescue Stripe::CardError => e
     flash[:alert] = e.message
