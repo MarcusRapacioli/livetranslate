@@ -167,7 +167,11 @@ border-bottom: 4px solid transparent;
 }
 .doc-name {
   width: 70%;
-text-align: left;
+  text-align: left;
+  p {
+    font-size: 12px;
+    color: #333
+  }
 }
 
 .to-do {
