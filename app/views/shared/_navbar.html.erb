@@ -5,22 +5,22 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-    <div class="navbar-wagon-item">
-      <%= link_to "How it works", root_path, class: "nav-link" %>
+    <div class="navbar-wagon-item live-translate-root">
+      <%= link_to "How it works", root_path %>
     </div>
     <% if user_signed_in? %>
-      <div class="navbar-wagon-item">
-        <%= link_to "Profile", user_path(current_user), class: "nav-link #{'nav-link-underlined' if params[:controller] == 'users' && params[:action] == 'show'}" %>
+      <div class="navbar-wagon-item <%= params[:controller] == 'users' ? 'nav-selected' : 'live-translate-root' %>">
+        <%= link_to "Profile", user_path(current_user) %>
       </div>
-      <div class="navbar-wagon-item">
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <div class="navbar-wagon-item live-translate-root">
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
       </div>
     <% else %>
-      <div class="navbar-wagon-item">
-        <%= link_to "Sign-up", new_user_registration_path, class: "nav-link" %>
+      <div class="navbar-wagon-item live-translate-root">
+        <%= link_to "Sign-up", new_user_registration_path %>
       </div>
-      <div class="navbar-wagon-item">
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <div class="navbar-wagon-item live-translate-root">
+        <%= link_to "Login", new_user_session_path %>
       </div>
     <% end %>
   </div>
