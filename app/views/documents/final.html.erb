@@ -1,1 +1,7 @@
-<h1><strong><%=@document.final_content %></strong> </h1>
+<!-- <h1><strong><%=@document.original_content %>awefhio;awefi;awefij</strong> </h1> -->
+<div class="final-content">
+<% @document.sections.each do |section| %>
+  <h1>&nbsp&nbsp<%= section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %></h1>
+  </br>
+<% end %>
+</div>
