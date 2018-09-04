@@ -17,7 +17,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -53,11 +53,18 @@ class DocumentsController < ApplicationController
   end
 
   def update
-    if @document.update(document_params)
-      redirect_to document_path(@document)
-    else
-      render :edit
+    if @document.sections.each do |section|
+        section.final_content?
+       end
+       @document.sections.order(:order).each do |section|
+        @document.final_content << section.final_content
+        @document.save!
+       end
+       redirect_to user_path(current_user)
+     else
+
     end
+
   end
 
   def destroy
@@ -176,7 +183,6 @@ class DocumentsController < ApplicationController
     @document.original_content = sentences.join
 
     @document.save!
-
    end
 
 

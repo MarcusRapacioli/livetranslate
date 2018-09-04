@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_03_145141) do
+ActiveRecord::Schema.define(version: 2018_09_04_102847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_09_03_145141) do
     t.string "title"
     t.text "original_content"
     t.text "student_content"
-    t.text "final_content"
+    t.text "final_content", default: ""
     t.bigint "user_id"
     t.bigint "lesson_id"
     t.string "pdf"
