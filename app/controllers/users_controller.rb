@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = current_user
     @document = Document.new
     @documents = @user.documents
+    @orders = Order.find_by(params[:user_id])
 
   end
 
