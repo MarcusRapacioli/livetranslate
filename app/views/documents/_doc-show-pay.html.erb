@@ -1,0 +1,29 @@
+<div class="margin-top">
+
+  </div>
+
+  <div class="flex-doc">
+    <div class="preview">
+      <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+    </div>
+
+    <div class="invoice-show">
+      <div class="successful">
+        <div class="icon">
+          <%= image_tag "document-upload.svg", :id => "upload-image"%>
+        </div>
+        <p><strong>Success! Document uploaded</strong></>
+        <p><%= @document.title %></p>
+        <p>Thank you for uploading a document to live<strong>translate</strong></p>
+        <p>Please pay now to send your document for translation</p>
+      </div>
+      <div class="stripe-form">
+    <%= render 'payments/paymentform', order: @document.order, document: @document %>
+      </div>
+
+        <div class="buttons-bottom">
+          <%= link_to "Back to Profile", user_path(@user), :class => "btn btn-danger buttons-show" %>
+        </div>
+
+  </div>
+  </div>

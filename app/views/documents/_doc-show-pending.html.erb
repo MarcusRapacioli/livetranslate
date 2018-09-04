@@ -1,0 +1,15 @@
+<div class="margin-top">
+
+  </div>
+
+  <div class="flex-doc">
+    <div class="preview">
+      <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+      </div>
+
+      <div class="translating">
+        <p><%= @document.lesson.lesson_name %> are translating your document.</p>
+        <p id="logo-title">live<strong>translate</strong></p>
+      </div>
+
+  </div>
