@@ -1,4 +1,0 @@
-<h1>Converter</h1>
-<% @document.sections.each do |section| %>
-  <p> <%= section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %></p></br>
-<% end %>
