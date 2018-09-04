@@ -26,7 +26,7 @@
     <% if @user.attended_lessons.empty? %>
       <h1>mate no lessons</h1>
     <% end %>
-    <% @user.attended_lessons.each_with_index do |lesson, index| %>
+    <% @user.attended_lessons.reverse.each_with_index do |lesson, index| %>
       <div role="tabpanel" class="tab-pane <%= 'active' if index == 0 %>" id="<%= lesson.slug %>">
        <div class="lesson-name">
          <%= lesson.name %>

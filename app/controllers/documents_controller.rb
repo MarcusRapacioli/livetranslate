@@ -42,7 +42,7 @@ class DocumentsController < ApplicationController
       set_original_content
       create_sections
       create_order
-      redirect_to user_path(current_user)
+      redirect_to document_path(@document)
     else
       render :new
     end
@@ -70,7 +70,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   end
 
   private

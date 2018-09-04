@@ -192,4 +192,16 @@ color: white;
   }
 }
 
+.fas {
+  margin-right: -5px;
+  margin-left: -100px;
+  color: rgb(150,150,150);
+    &:hover {
+      color: #EE6352;
+    }
+}
+
+.btn-success {
+  margin-right: 10px;
+}
 

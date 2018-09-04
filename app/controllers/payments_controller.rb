@@ -1,5 +1,6 @@
 class PaymentsController < ApplicationController
   before_action :set_order
+  # after_action :update_document_status, only: [ :create ]
 
   def new
   end
@@ -17,7 +18,12 @@ class PaymentsController < ApplicationController
     currency:     @order.amount.currency
   )
 
-  @order.update(payment: charge.to_json, state: 'paid')
+  if @order.update(payment: charge.to_json, state: 'paid')
+    doc = @order.document
+    doc.student_content = "paid"
+    doc.save!
+  end
+
   redirect_to order_path(@order)
 
   rescue Stripe::CardError => e
