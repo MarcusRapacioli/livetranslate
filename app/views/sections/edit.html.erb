@@ -1,10 +1,11 @@
+<h3 id="ed-title"><%= @document.title %></h3>
 <div class="ed">
-  <div class="edit-margin"></div>
-  <div class="document-scroll">
-      <div class="edit-header">
+  <div class="doc">
+    <div class="edit-header">
       <h4>ORIGINAL DOCUMENT</h4>
-      <h3><%= @document.title %></h3>
-      </div>
+    </div>
+
+  <div class="document-scroll">
     <div class="e-container">
       <% @sections.each do |section| %>
         <div class="<%= @section.original_content == section.original_content ? 'selected-card' : 'section-card' %>">
@@ -15,6 +16,7 @@
       <% end %>
     </div>
   </div>
+</div>
 
 <div class="edit-container">
   <div class="edit-header">

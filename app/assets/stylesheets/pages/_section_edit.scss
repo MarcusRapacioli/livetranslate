@@ -19,17 +19,18 @@
 // }
 
 .document-scroll {
-  height: 60vh;
+  height: 65vh;
   overflow: scroll;
   width: 40vw;
+  padding: -6px;
 }
 
 .section-card {
   background-color: white;
-  padding: 15px;
-  border-radius: 4px;
+  padding: 20px 20px 20px 40px;
+  // border-radius: 4px;
   box-shadow: 0px 0px 6px 1px rgb(200,200,200);
-  margin: 20px 20px 20px 20px;
+  margin: 4px 20px 20px 20px;
   font-size: 13px;
   transition: all 0.2s;
 }
@@ -56,6 +57,7 @@
   background-color: transparent;
  padding: 0px;
   width: 40vw;
+  // margin-top: 45px;
 
 }
 
@@ -70,9 +72,11 @@ text-decoration: none;
   border: none;
   outline: none;
   width: 90%;
-  height: 400px;
-  text-size: 13px;
+  height: 500px;
+  font-size: 13px;
     box-shadow: 0px 0px 6px 1px rgb(200,200,200);
+  padding: 20px 20px 20px 40px;
+
 
 }
 
@@ -85,21 +89,33 @@ text-decoration: none;
     // border-left: 8px solid #EE6352;
     transition: all 0.2s;
     outline: none;
-      text-size: 13px;
+      font-size: 13px;
+  padding: 20px 20px 20px 40px;
 
 }
 
 .edit-header h4 {
-  padding: 15px 15px 0px 15px;
-  background-color:white;
+  padding: 0px 15px 0px 15px;
   font-size: 14px;
   color: rgb(150,150,150);
   font-weight: lighter;
+  margin-bottom: 20px;
+}
+#ed-title {
+  font-size: 21px;
+  color: rgb(51,51,51);
+  padding: 0px 15px 0px 15px;
+  margin-left: 83px;
+}
+
+.edit-header {
+  padding: 0px 15px 0px 15px;
+
 }
 
 .ed {
-  padding: 50px 0px 0px 0px;
-  margin: 0px 50px 50px 50px;
+  padding: 0px 20px 0px 20px;
+  margin: 0px 50px 10px 50px;
   display: flex;
   justify-content: space-between;
   height: 70vh;
