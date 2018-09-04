@@ -1,23 +1,22 @@
 .login-page {
   display: flex;
 }
+
 .login-left {
-  background-color: #A082E1;
+  background-color: $brand-primary;
   width: 50vw;
   height: 100vh;
+  padding: 100px;
 }
 
 .login-right {
   width: 50vw;
   height: 100vh;
   padding-top: 10vh;
-  padding-bottom: 10vh;
-
-
+  padding-bottom: 5vh;
 }
 
 #login-image {
-  padding: 75px;
   padding-top: 90px;
   width: 100%
 }
@@ -28,20 +27,88 @@
   width: 40vw;
   height: 100%;
   margin: 0 auto;
-  padding: 10vh;
+  padding-top: 5vh;
+  padding-right: 10vh;
+  padding-left: 10vh;
+  .tab-pane {
+    margin-top: 20px;
+  }
 }
-.inputs{
+
+.login-nav {
+  .active a {
+    background-color: white !important ;
+    color: rgb(51,51,51) !important ;
+    border-bottom: 4px solid #EE6352 ;
+    text-decoration: none;
+  }
+  li {
+    a {
+      color: rgb(150,150,150);
+      padding-top: 12px;
+      transition: .3s;
+    }
+    a:hover {
+      background-color: rgba(236, 100, 86, 0.6);
+      color: white;
+      text-decoration: none;
+    }
+    a:focus {
+      background-color: white;
+      color: rgb(51,51,51);
+    }
+  }
+}
+
+.inputs {
   color: #919193;
   transition: background-color ease-in-out 0.15s;
+  background-color: transparent;
+  border: none;
   border-bottom: 3px solid #919193;
   border-radius: 4px;
+  box-shadow: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.inputs:focus{
-color: #919193;
-background-color: rgba(236, 100, 86, 0.1);
-border-radius: 4px;
-border-bottom: 3px solid #EE6352;
-transition: background-color ease-in-out 0.15s;
+
+.inputs:focus {
+  color: #919193;
+  background-color: rgba(236, 100, 86, 0.1);
+  border-radius: 4px;
+  border-bottom: 3px solid #EE6352;
+  transition: background-color ease-in-out 0.15s;
+  box-shadow: none;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
+
+.centre-item {
+  text-align: center;
+}
+
+.root-link {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  margin: 15px;
+  text-decoration: none !important;
+  i {
+    color: white;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 45px;
+    width: 45px;
+  }
+  i:hover, i:active {
+    border-radius: 50%;
+    border: solid white;
+  }
+}
+
+
+
+
 
 

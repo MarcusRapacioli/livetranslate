@@ -44,7 +44,26 @@ background: white;
 }
 
 .bars {
+  .nav .active  a {
+    background-color: white !important ;
+    color: rgb(51,51,51) !important ;
+    border-right: 4px solid #EE6352;
+  }
 
+  .nav li a {
+  color: rgb(150,150,150);
+   padding-top: 12px;
+   padding-bottom: 12px;
+  }
+  .nav li a:hover {
+    background-color: rgba(236, 100, 86, 0.6);
+    color: white;
+  }
+
+  .nav li a:focus {
+    background-color: white;
+    color: rgb(51,51,51);
+  }
 }
 
 .bars a {
@@ -75,26 +94,6 @@ background: white;
   border-radius: 5px;
 }
 
-.nav .active  a {
-  background-color: white !important ;
-  color: rgb(51,51,51) !important ;
-  border-right: 4px solid #EE6352;
-}
-
-.nav li a {
-color: rgb(150,150,150);
- padding-top: 12px;
- padding-bottom: 12px;
-}
-.nav li a:hover {
-  background-color: rgba(236, 100, 86, 0.6);
-  color: white;
-}
-
-.nav li a:focus {
-  background-color: white;
-  color: rgb(51,51,51);
-}
 
 .bars li {
   margin-top: 20px;

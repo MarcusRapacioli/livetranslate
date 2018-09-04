@@ -17,6 +17,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -28,10 +29,12 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(document_params)
     @document.business = current_user
+    @document.price_cents = 1000
     if @document.save
       set_original_content
       create_sections
-      redirect_to document_path(@document)
+      create_order
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -59,8 +62,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    redirect_to root_path
-
+    redirect_to user_path
   end
 
   private
@@ -79,6 +81,10 @@ class DocumentsController < ApplicationController
       reader.pages.each do |page|
       puts page.text
       end
+  end
+
+  def create_order
+    Order.create(amount: @document.price, state: 'pending', user: current_user, document: @document)
   end
 
   def create_sections

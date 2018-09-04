@@ -1,0 +1,36 @@
+.success {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  // position: sticky;
+  // top: 0;
+  h3 {
+    font-size: 22px;
+  }
+}
+
+#upload-image {
+  width : 100px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.upload-title {
+  margin-top: 40px;
+  margin-top: 20px;
+}
+
+#trim {
+  background-size: 120%;
+}
+
+.preview {
+  overflow: scroll;
+  height: 40vh;
+}
+
+.delete-document {
+  margin-top: 30px;
+}

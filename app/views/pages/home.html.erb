@@ -5,7 +5,7 @@
       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
       <%= link_to "Profile", user_path(current_user) %>
     <% else %>
-      <%= link_to "Login", new_user_session_path %>
+      <%= link_to "Login / Register", new_user_session_path %>
     <% end %>
    </div>
     <h1>live<strong>translate</strong></h1>
