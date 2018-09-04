@@ -13,3 +13,4 @@
 <div class="center-text delete-document">
   <%= link_to "Back to your profile", user_path, :class => "button delete-document" %>
 </div>
+<%= link_to 'Create PDF document', document_path(@document, :format => :pdf) %>
