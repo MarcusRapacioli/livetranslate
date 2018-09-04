@@ -185,8 +185,12 @@ color: white;
   }
 }
 
-.far {
+.fas {
+  margin-right: -5px;
   margin-left: -100px;
   color: rgb(150,150,150);
+    &:hover {
+      color: #EE6352;
+    }
 }
 

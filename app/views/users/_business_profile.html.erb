@@ -47,7 +47,7 @@
                     <% end %>
                   </div>
                   <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#payment-<%= document.id %>">Purchase</button></a>
-                  <a class="far fa-trash-alt" <%= link_to '', document_path(document), method: :delete %></a>
+                  <a class="fas fa-times" <%= link_to '', document_path(document), method: :delete %></a>
                   <div class="modal fade" id="payment-<%= document.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -72,14 +72,14 @@
           <div class="doc-count">
             <% i = 0 %>
             <% @documents.each do |document| %>
-            <% if document.student_content? %>
+            <% if !document.student_content.blank? %>
               <% i += 1 %>
               <% end %>
             <% end %>
           <p><%= i %> documents</p>
         </div>
         <% @documents.reverse.each do |t|  %>
-        <% if t.student_content? %>
+        <% if !t.student_content.blank? %>
      <div class="assignment">
       <div class="doc-name">
         <%= link_to edit_document_section_path(t, t), id: "preview_#{t.id}", class: "preview_link" do %>

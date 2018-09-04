@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @document = Document.new
     @documents = @user.documents
+
   end
 
   def edit
