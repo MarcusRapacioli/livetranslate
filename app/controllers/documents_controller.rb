@@ -17,7 +17,7 @@ class DocumentsController < ApplicationController
   end
 
   def show
-    user = current_user
+    @user = current_user
     respond_to do |format|
       format.html
       format.pdf do
