@@ -1,6 +1,7 @@
 <div class="lt">
   <h2>live<strong>translate</strong></h2>
-  <%= link_to 'submit', document_path(@document), method: :patch %>
+  <%= link_to 'Send back to the business', document_path(@document), method: :patch, class: "button submit-to-business", id: "sweet-alert-demo", remote: true %>
+  <!-- <button id="sweet-alert-demo" class="button">Send back to the business</button> -->
 
   <div class="flex-container-lt">
     <div class="original-container">
@@ -36,4 +37,7 @@
     </div>
   </div>
 </div>
+
+
+
 

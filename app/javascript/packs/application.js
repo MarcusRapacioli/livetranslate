@@ -1,5 +1,6 @@
 import "bootstrap";
 //= require bootstrap-modals
+import swal from 'sweetalert';
 
 // Profile tabs
 import { openCity } from '../components/tabs';
