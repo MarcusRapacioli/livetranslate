@@ -46,6 +46,9 @@
                       <%= cl_image_tag document.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
                     <% end %>
                   </div>
+                  <% if document.student_content == "paid" %>
+                  <a type="button" class="btn btn-success">live<strong>Translating</strong></a>
+                  <% else %>
                   <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#payment-<%= document.id %>">Purchase</button></a>
                   <a class="fas fa-times" <%= link_to '', document_path(document), method: :delete %></a>
                   <div class="modal fade" id="payment-<%= document.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -61,6 +64,7 @@
                       </div>
                     </div>
                   </div>
+                  <% end %>
                 </div>
               <% end %>
       </div>
@@ -87,6 +91,7 @@
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
      </div>
+        <a type="button" class="btn btn-success">live<strong>Translating</strong></a>
       </div>
         <% end %>
       <% end %>
@@ -114,7 +119,7 @@
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
      </div>
-     <a type="button" class="btn btn-upload" data-toggle="modal" data-target="#download">Download</button></a>
+     <a type="button" class="btn btn-upload">Download</button></a>
       </div>
         <% end %>
       <% end %>

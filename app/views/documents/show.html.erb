@@ -1,15 +1,22 @@
-<div class="center-text success">
-  <%= image_tag "document-upload.svg", :id => "upload-image"%>
-  <h3><%= @document.title %></h3>
-  <h3 >Upload Successfull</h3>
-  <h3>Thank you for uploading a document to live<strong>translate</strong></h3>
-</div>
+<div class="container">
+  <div class="flexy">
+    <div>
+      <%= image_tag "document-upload.svg", :id => "upload-image"%>
+    </div>
+    <div class="successful">
+      <h3><%= @document.title %></h3>
+      <h3 >Upload Successfull</h3>
+      <h3>Thank you for uploading a document to live<strong>translate</strong></h3>
+    </div>
+  </div>
 
+<div class="flex-doc">
+  <div class="preview">
+    <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+  </div>
 
-<div class="preview center-text">
-  <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
-</div>
-
-<div class="center-text delete-document">
-  <%= link_to "Back to your profile", user_path(@user), :class => "button delete-document" %>
+  <div class="center-text delete-document">
+    <%= link_to "Back to your profile", user_path(@user), :class => "button profile-page" %>
+  </div>
+  </div>
 </div>

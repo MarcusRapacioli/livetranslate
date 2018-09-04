@@ -1,20 +1,11 @@
-.success {
-  margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  // position: sticky;
-  // top: 0;
-  h3 {
-    font-size: 22px;
-  }
+.successful {
+  font-size: 10px;
 }
 
 #upload-image {
-  width : 100px;
-}
-
-.center-text {
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  width : 50px;
 }
 
 .upload-title {
@@ -27,10 +18,23 @@
 }
 
 .preview {
+
   overflow: scroll;
-  height: 40vh;
+  height: 50vh;
+  // margin-bottom: 100px;
 }
 
-.delete-document {
-  margin-top: 30px;
+.profile-page {
+  // margin-top: 0px;
+  // margin-bottom: 0px;
+}
+
+.flexy {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-doc {
+  display: flex;
+  justify-content: space-around;
 }
