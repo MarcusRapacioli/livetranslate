@@ -38,15 +38,20 @@
           <p><%= i %> documents</p>
               </div>
 
-              <% @documents.each do |document| %>
+              <% @documents.reverse.each do |document| %>
                 <div class="assignment">
                   <div class="doc-name">
                     <%= link_to edit_document_section_path(document, document), id: "preview_#{document.id}", class: "preview_link" do %>
                       <%= document.title %>
+                      <p>Added: <%= document.created_at.strftime("%d %b %y") %></p>
                       <%= cl_image_tag document.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
                     <% end %>
                   </div>
+                  <% if document.student_content == "paid" %>
+                  <a type="button" class="btn btn-success">live<strong>translating</strong></a>
+                  <% else %>
                   <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#payment-<%= document.id %>">Purchase</button></a>
+                  <a class="fas fa-times" <%= link_to '', document_path(document), method: :delete %></a>
                   <div class="modal fade" id="payment-<%= document.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -60,6 +65,7 @@
                       </div>
                     </div>
                   </div>
+                  <% end %>
                 </div>
               <% end %>
       </div>
@@ -71,21 +77,24 @@
           <div class="doc-count">
             <% i = 0 %>
             <% @documents.each do |document| %>
-            <% if document.student_content? %>
+            <% if !document.student_content.blank? %>
               <% i += 1 %>
               <% end %>
             <% end %>
           <p><%= i %> documents</p>
         </div>
-        <% @documents.each do |t|  %>
-        <% if t.student_content? %>
+        <% @documents.reverse.each do |t|  %>
+        <% if !t.student_content.blank? %>
      <div class="assignment">
       <div class="doc-name">
         <%= link_to edit_document_section_path(t, t), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
+        <p>Added: <%= t.created_at.strftime("%d %b %y")%></p>
+        <%# raise %>
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
      </div>
+        <a type="button" class="btn btn-success">live<strong>translating</strong></a>
       </div>
         <% end %>
       <% end %>
@@ -104,7 +113,7 @@
             <% end %>
           <p><%= i %> documents</p>
         </div>
-      <% @documents.each do |t|  %>
+      <% @documents.reverse.each do |t|  %>
         <% if t.final_content? %>
      <div class="assignment">
       <div class="doc-name">
@@ -113,7 +122,7 @@
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
      </div>
-     <a type="button" class="btn btn-upload" data-toggle="modal" data-target="#download">Download</button></a>
+     <a type="button" class="btn btn-upload">Download</button></a>
       </div>
         <% end %>
       <% end %>

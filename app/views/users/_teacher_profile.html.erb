@@ -2,7 +2,7 @@
   <div class="side-bar">
     <div class="profile">
       <div class="avatar">
-        <%= cl_image_tag "robin" %> <br>
+        <%= image_tag "alectrump" %> <br>
       </div>
       <div class="name">
         <%= @user.name %> <br>
@@ -26,7 +26,7 @@
     <% if @user.taught_lessons.empty? %>
       <h1>mate no lessons</h1>
     <% end %>
-    <% @user.taught_lessons.each_with_index do |lesson, index| %>
+    <% @user.taught_lessons.reverse.each_with_index do |lesson, index| %>
       <div role="tabpanel" class="tab-pane <%= 'active' if index == 0 %>" id="<%= lesson.slug %>">
        <div class="lesson-name">
          <%= lesson.name %>

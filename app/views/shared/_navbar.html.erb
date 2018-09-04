@@ -1,19 +1,16 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <i class="fas fa-graduation-cap"></i>
-  </a>
+<div class="<%= params[:controller] == 'users' ? 'navbar-wagon-white' : 'navbar-wagon-trans' %>">
+  <div class="live-translate-root">
+    <a href="/">live<strong>translate</strong></a>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
     <div class="navbar-wagon-item">
       <%= link_to "How it works", root_path, class: "nav-link" %>
     </div>
     <% if user_signed_in? %>
       <div class="navbar-wagon-item">
         <%= link_to "Profile", user_path(current_user), class: "nav-link #{'nav-link-underlined' if params[:controller] == 'users' && params[:action] == 'show'}" %>
-
       </div>
       <div class="navbar-wagon-item">
         <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
@@ -26,10 +23,7 @@
         <%= link_to "Login", new_user_session_path, class: "nav-link" %>
       </div>
     <% end %>
-
-
-
-
+  </div>
     <!-- Profile picture with dropdown list -->
     <!-- <div class="navbar-wagon-item">
       <div class="dropdown">
@@ -40,7 +34,6 @@
         </ul>
       </div>
     </div> -->
-  </div>
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">

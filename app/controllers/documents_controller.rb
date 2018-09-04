@@ -18,6 +18,14 @@ class DocumentsController < ApplicationController
 
   def show
     @user = current_user
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Your_Document",
+        template: "documents/final.html.erb",
+        layout: 'pdf.html'
+      end
+    end
   end
 
   def new
@@ -34,7 +42,7 @@ class DocumentsController < ApplicationController
       set_original_content
       create_sections
       create_order
-      redirect_to user_path(current_user)
+      redirect_to document_path(@document)
     else
       render :new
     end
@@ -72,7 +80,7 @@ class DocumentsController < ApplicationController
 
   def destroy
     @document.destroy
-    redirect_to user_path
+    redirect_to user_path(current_user)
   end
 
   private

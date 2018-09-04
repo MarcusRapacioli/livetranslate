@@ -1,0 +1,6 @@
+<h1>Converter</h1>
+<% @document.sections.each do |section| %>
+  <p> <%= section.original_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %></p></br>
+<% end %>
+
+<%= link_to "Get PDF", document_to_pdf_path(@document, format: :pdf) %>
