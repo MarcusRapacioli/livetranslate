@@ -17,6 +17,7 @@
         <li role="presentation"><a href="#pending" aria-controls="pending" role="tab" data-toggle="tab">Work in progress</a></li>
         <li role="presentation"><a href="#translated" aria-controls="translated" role="tab" data-toggle="tab">Translated</a></li>
         <li role="presentation"><a type="button" class="btn btn-upload" data-toggle="modal" data-target="#myModal">Upload</button></a></li>
+         <li role="presentation"><a href="#invoices" aria-controls="invoices" role="tab" data-toggle="tab">Invoices</a></li>
       </ul>
     </div>
   </div>
@@ -127,7 +128,34 @@
         <% end %>
       <% end %>
       </div>
-    </div>
+
+  <div role="tabpanel" class="tab-pane" id="invoices">
+          <div class="lesson-name">
+         Invoices
+       </div>
+          <div class="doc-count">
+            <% i = 0 %>
+            <% @documents.each do |document| %>
+            <% if !document.student_content.blank? %>
+              <% i += 1 %>
+              <% end %>
+            <% end %>
+          <p><%= i %> documents</p>
+        </div>
+        <% @user.orders.each do |t|  %>
+        <% if t.state == "paid" %>
+     <div class="assignment">
+      <div class="doc-name">
+    <%= t.document_id %> <%= t.document.title %> ------ <%= t.updated_at %> ------  <%= t.state %>
+     </div>
+     £<%= t.amount_cents / 100 %>
+      </div>
+        <% end %>
+      <% end %>
+      </div>
+
+
+
   </div>
   <!-- Modal for upload -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

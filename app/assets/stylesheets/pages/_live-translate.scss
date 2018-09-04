@@ -28,20 +28,20 @@
   font-size: 30px;
 }
 
-.lt h2 {
-  color: rgb(51,51,51);
-  background-color: white;
-  padding: 20px 0px 20px 0px;
-  width: 25%;
-  margin: 0 auto;
-  margin-bottom: 25px;
-  text-align: center;
-  box-shadow: 0px 0px 6px 1px rgb(200,200,200);
-}
+// .lt h2 {
+//   color: rgb(51,51,51);
+//   background-color: white;
+//   padding: 20px 0px 20px 0px;
+//   width: 25%;
+//   margin: 0 auto;
+//   margin-bottom: 25px;
+//   text-align: center;
+//   box-shadow: 0px 0px 6px 1px rgb(200,200,200);
+// }
 .original {
   text-align: left;
   width: 45vw;
-  height: 55vh;
+  height: 56vh;
   overflow: scroll;
   padding: 10px 15px 15px 40px;
   font-size: 13px;
@@ -51,18 +51,18 @@
 .original-container {
   background-color: white;
   box-shadow: 0px 0px 6px 1px rgb(200,200,200);
+  margin-top: 20px;
 }
 
 .student-container {
   background-color: rgb(245,245,245);
-
-
+  margin-top: -15px;
 }
 
 .student {
   text-align: left;
   width: 45vw;
-  height: 70vh;
+  height: 80vh;
   overflow: scroll;
   font-size: 13px;
   padding: 15px;
@@ -175,3 +175,7 @@ text-decoration: none;
     visibility: visible;
 }
 
+.translate-button {
+  display: flex;
+  justify-content: center;
+}
