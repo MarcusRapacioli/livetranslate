@@ -1,1 +1,2 @@
 <%= render 'form', document: @document %>
+<%= link_to 'Create PDF document', document_path(@document, :format => :pdf) %>
