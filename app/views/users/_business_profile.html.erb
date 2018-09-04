@@ -38,7 +38,7 @@
           <p><%= i %> documents</p>
               </div>
 
-              <% @documents.each do |document| %>
+              <% @documents.reverse.each do |document| %>
                 <div class="assignment">
                   <div class="doc-name">
                     <%= link_to edit_document_section_path(document, document), id: "preview_#{document.id}", class: "preview_link" do %>
@@ -47,6 +47,7 @@
                     <% end %>
                   </div>
                   <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#payment-<%= document.id %>">Purchase</button></a>
+                  <a class="far fa-trash-alt" <%= link_to '', document_path(document), method: :delete %></a>
                   <div class="modal fade" id="payment-<%= document.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -77,7 +78,7 @@
             <% end %>
           <p><%= i %> documents</p>
         </div>
-        <% @documents.each do |t|  %>
+        <% @documents.reverse.each do |t|  %>
         <% if t.student_content? %>
      <div class="assignment">
       <div class="doc-name">
@@ -104,7 +105,7 @@
             <% end %>
           <p><%= i %> documents</p>
         </div>
-      <% @documents.each do |t|  %>
+      <% @documents.reverse.each do |t|  %>
         <% if t.final_content? %>
      <div class="assignment">
       <div class="doc-name">
