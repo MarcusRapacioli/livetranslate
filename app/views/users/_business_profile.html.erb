@@ -41,7 +41,7 @@
               <% @documents.reverse.each do |document| %>
                 <div class="assignment">
                   <div class="doc-name">
-                    <%= link_to edit_document_section_path(document, document), id: "preview_#{document.id}", class: "preview_link" do %>
+                    <%= link_to document_path(document), id: "preview_#{document.id}", class: "preview_link" do %>
                       <%= document.title %>
                       <p>Added: <%= document.created_at.strftime("%d %b %y") %></p>
                       <%= cl_image_tag document.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
@@ -87,7 +87,7 @@
         <% if !t.student_content.blank? %>
      <div class="assignment">
       <div class="doc-name">
-        <%= link_to edit_document_section_path(t, t), id: "preview_#{t.id}", class: "preview_link" do %>
+        <%= link_to document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
         <p>Added: <%= t.created_at.strftime("%d %b %y")%></p>
         <%# raise %>
@@ -117,7 +117,7 @@
         <% if t.final_content? %>
      <div class="assignment">
       <div class="doc-name">
-        <%= link_to edit_document_section_path(t, t), id: "preview_#{t.id}", class: "preview_link" do %>
+        <%= link_to document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
