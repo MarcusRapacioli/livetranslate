@@ -65,15 +65,17 @@ padding-bottom: 10px;
 }
 
 .nav-selected {
-  height: 55px;
-  line-height: 55px;
+  height: 45px;
+  line-height: 45px;
   vertical-align: center;
   margin-left: 10px;
   a {
     color: #EC6456;
     display:block;
+    content: '';
     border-bottom: 2px solid #EC6456;
     text-decoration: none !important;
+    font-size: 15px;
   }
 }
     // display: table-cell;
