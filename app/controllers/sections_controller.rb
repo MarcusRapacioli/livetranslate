@@ -32,7 +32,7 @@ class SectionsController < ApplicationController
   def update
 
     if @section.update(section_params)
-      @section.status = "Complete" if @section.final_content?
+      @section.status = "Submitted" if @section.final_content?
       @section.save
       redirect_to user_path(current_user)
     else
