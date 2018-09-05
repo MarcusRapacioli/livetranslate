@@ -32,9 +32,9 @@ italian = Lesson.create!(lesson_name: "Italian - Intermediate", teacher: User.fi
 parseltongue = Lesson.create!(lesson_name: "Parseltongue - Advanced", teacher: User.first)
 french = Lesson.create!(lesson_name: "French - Beginners", teacher: User.first)
 
-[neville, ron, harry, hermione, draco].each do |student|r
+[neville, ron, harry, hermione, draco].each do |student|
   StudentLesson.create!(student: student, lesson: russian)
-  StudentLesson.create!(student: student, lesson: american)
+  StudentLesson.create!(student: student, lesson: italian)
   StudentLesson.create!(student: student, lesson: french)
   StudentLesson.create!(student: student, lesson: parseltongue)
 end
