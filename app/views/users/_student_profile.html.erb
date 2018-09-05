@@ -13,7 +13,7 @@
     </div>
     <div class="bars">
       <ul style= "" class="nav" role="tablist">
-      <% @user.attended_lessons.each_with_index do |lesson, index| %>
+      <% @user.attended_lessons.reverse.each_with_index do |lesson, index| %>
         <li role="presentation" class="<%= 'active' if index == 0 %>"><a href="#<%= lesson.slug %>" aria-controls="<%= lesson.slug %>" role= "tab" data-toggle="tab"><%= lesson.name %></a></li>
       <% end %>
     </ul>
