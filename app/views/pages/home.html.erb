@@ -16,10 +16,11 @@
         <input type="text" placeholder="Your email" name="email" class="form-control custom">
       </div>
       <div>
-        <input type="submit" value= "Get started", class="button">
+        <!-- <input type="submit" value= "Get started", class="button"> -->
+        <%= link_to "Get started", new_user_session_path, class: "button" %>
       </div>
       </form>
-      <%#= link_to "Get started", new_user_registration_path, class: "button" %>
+
     </div>
   </div>
 
