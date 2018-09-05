@@ -7,8 +7,8 @@
         <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 600, :id => "trim" %>
       </div>
       <div class="button-flex">
-        <div class="initial-footer button">
-          DOWNLOAD
+        <div class="initial-footer">
+          <%= link_to 'Download', document_path(@document, :format => :pdf), class: "button"  %>
         </div>
       </div>
     </div>
@@ -20,8 +20,9 @@
         <%= cl_image_tag @document.final_pdf.file.public_id, format: :jpg, density: 300, width: 600, :id => "trim" %>
       </div>
       <div class="button-flex">
-        <div class="final-footer button">
-          DOWNLOAD
+        <div class="final-footer">
+          <%= link_to 'Download', document_path(@document, :format => :pdf), class: "button"  %>
+        </div>
         </div>
       </div>
     </div>
