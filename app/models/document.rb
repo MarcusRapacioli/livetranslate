@@ -10,6 +10,7 @@ class Document < ApplicationRecord
   # validates :original_content, presence: :true
 
   mount_uploader :pdf, PdfUploader
+  mount_uploader :final_pdf, FinalPdfUploader
 
    def slug
     title.split.join('_').downcase

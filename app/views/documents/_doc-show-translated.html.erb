@@ -1,0 +1,28 @@
+  <div class="flex-doc-translated">
+    <div class="inital-container">
+      <div class="doc-headers">
+        <strong>ORIGINAL</strong> | <%= @document.title %>
+      </div>
+      <div class="initial">
+        <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 600, :id => "trim" %>
+      </div>
+      <div class="button-flex">
+        <div class="initial-footer button">
+          DOWNLOAD
+        </div>
+      </div>
+    </div>
+    <div class="final-container">
+      <div class="doc-headers">
+       <strong>TRANSLATION</strong> | <%= @document.title %>
+      </div>
+      <div class="final">
+        <%= cl_image_tag @document.final_pdf.file.public_id, format: :jpg, density: 300, width: 600, :id => "trim" %>
+      </div>
+      <div class="button-flex">
+        <div class="final-footer button">
+          DOWNLOAD
+        </div>
+      </div>
+    </div>
+  </div>

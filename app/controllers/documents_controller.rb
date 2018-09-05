@@ -18,6 +18,7 @@ class DocumentsController < ApplicationController
 
   def show
     @user = current_user
+    # @test = WickedPdf.new.pdf_from_string(render_to_string('documents/final', layout: 'pdf.html'))
     respond_to do |format|
       format.html
       format.pdf do
@@ -72,6 +73,7 @@ class DocumentsController < ApplicationController
         section.status = "livetranslated"
       end
       @document.save!
+      create_pdf
       @id = current_user.id
       respond_to do |format|
         format.js { render action: "success.js.erb" }
@@ -85,6 +87,19 @@ class DocumentsController < ApplicationController
   end
 
   private
+
+  def create_pdf
+    uploader = @document.final_pdf
+    final = WickedPdf.new.pdf_from_string(render_to_string('documents/final', layout: 'pdf.html').gsub("\u0000", ''))
+    tmpfile = Tempfile.new("#{@document.id}_final_pdf")
+    tmpfile.binmode
+    tmpfile.write final
+
+    uploader.store! tmpfile
+
+    tmpfile.close
+    tmpfile.unlink
+  end
 
   def document_params
 
