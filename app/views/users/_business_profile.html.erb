@@ -123,7 +123,9 @@
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
      </div>
-     <a type="button" class="btn btn-upload">Download</button></a>
+     <!-- <a type="button" class="btn btn-upload">Download</button></a> -->
+     <%= link_to 'Download', document_path(t, :format => :pdf), :class => "btn btn-upload" %>
+
       </div>
         <% end %>
       <% end %>
