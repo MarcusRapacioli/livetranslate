@@ -1,11 +1,46 @@
-<<div class="submit-container">
-  <div class="submit-box">
-    <div class="submit-file"></div>
-    <ul class="submit-box">
-      <li></li>
-      <li></li>
-      <li></li>
+<!-- <div class="main-view">
+  <%#= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim", :class => "original-main" %>
+
+
+</div>
+<div class="previews">
+  <div>
+    <p>ORIGINAL PDF</p>
+    <%#= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim", :class => "original-preview" %>
+  </div>
+  <div class="selected-card">
+    <%= @section.final_content %>
+  </div>
+  <div>
+
+  </div>
+</div> -->
+
+<div class="show-container">
+  <div class="show-tabs">
+    <ul class="login-nav nav nav-justified">
+      <li role="presentation" class="active"><a href="#show-original" data-toggle="tab">ORIGINAL PDF</a></li>
+      <li role="presentation"><a href="#your-section" data-toggle="tab">SECTION</a></li>
+      <li role="presentation"><a href="#show-final" data-toggle="tab">FINAL PDF</a></li>
     </ul>
-    <div class="tick"><div></div></div>
+  </div>
+
+  <div class="content-box">
+    <div class="tab-content">
+      <div class="tab-pane active" id="show-original">
+        <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+      </div>
+      <div class="tab-pane" id="your-section">
+        <div class="selected-card">
+          <%= @section.final_content %>
+        </div>
+      </div>
+      <div class="tab-pane" id="show-final">
+        <%= cl_image_tag @document.final_pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+      </div>
+    </div>
+
   </div>
 </div>
+
+
