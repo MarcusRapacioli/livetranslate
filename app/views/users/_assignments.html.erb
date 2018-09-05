@@ -2,6 +2,7 @@
 <% documents.each do |t| %>
   <div class="assignment">
     <div class="doc-name">
+      <% if  %>
       <%= link_to edit_document_section_path(t, t.sections.where(student: current_user).first), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
         <p>Added: <%= t.created_at.strftime("%d %b %y") %></p>
