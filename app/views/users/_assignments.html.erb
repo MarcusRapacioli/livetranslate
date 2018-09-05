@@ -24,16 +24,16 @@
     </div>
     <div class="status">
       <% if t.sections.find_by(student: current_user).status == "Submitted" %>
-        <div class="complete">
-          <%= t.sections.find_by(student: current_user).status %>
+        <div class="submitted">
+          <p>Submitted</p>
         </div>
       <% elsif t.sections.find_by(student: current_user).status == "To Do"%>
         <div class="to-do">
-          <%= t.sections.find_by(student: current_user).status %>
+           <p>To Do</p>
         </div>
       <% else %>
         <div class="livetranslated">
-          <%= t.sections.find_by(student: current_user).status %>
+          <p>live<strong>translated</strong></p>
         </div>
       <% end %>
     </div>
