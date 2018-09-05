@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "deleting all"
 
 StudentLesson.destroy_all
 Section.destroy_all
@@ -13,25 +14,27 @@ Document.destroy_all
 Lesson.destroy_all
 User.destroy_all
 
-User.create!(first_name: "Donald", last_name: "Trump", email: "donald@me.com", password: "moolah123", user_type: "Teacher", institution: "Trump U")
-ivanka = User.create!(first_name: "Ivanka", last_name: "Trump", email: "ivanka@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
-User.create!(first_name: "Vlad", last_name: "Putin", email: "vlad@me.com", password: "moolah123", user_type: "Business", institution: "Bose")
-User.create!(first_name: "Jared", last_name: "Trump", email: "jared@me.com", password: "moolah123", user_type: "Teacher", institution: "Trump U")
+puts "Creating Hogwarts"
+
+User.create!(first_name: "Professor", last_name: "Snape", email: "snape@me.com", password: "wizard", user_type: "Teacher", institution: "Hogwarts")
+neville = User.create!(first_name: "Neville", last_name: "Longbottom", email: "neville@me.com", password: "wizard", user_type: "Student", institution: "Hogwarts")
+User.create!(first_name: "Warren", last_name: "Buffet", email: "waren@me.com", password: "wizard", user_type: "Business", institution: "Berkshire Hathaway")
 
 
-jeremy = User.create!(first_name: "Jeremy", last_name: "Trump", email: "jeremy@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
-theresa = User.create!(first_name: "Theresa", last_name: "Trump", email: "theresa@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
-nigel = User.create!(first_name: "Nigel", last_name: "Trump", email: "nigel@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
-boris = User.create!(first_name: "Boris", last_name: "Trump", email: "boris@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
-jacob = User.create!(first_name: "Jacob", last_name: "Trump", email: "jacob@me.com", password: "moolah123", user_type: "Student", institution: "Trump U")
+ron = User.create!(first_name: "Ron", last_name: "Weasley", email: "ron@me.com", password: "wizard", user_type: "Student", institution: "Hogwarts")
+harry = User.create!(first_name: "Harry", last_name: "Potter", email: "harry@me.com", password: "wizard", user_type: "Student", institution: "Hogwarts")
+hermione = User.create!(first_name: "Hermione", last_name: "Granger", email: "hermione@me.com", password: "wizard", user_type: "Student", institution: "Hogwarts")
+draco = User.create!(first_name: "Draco", last_name: "Malfoy", email: "draco@me.com", password: "wizard", user_type: "Student", institution: "Hogwarts")
 
 
-russian = Lesson.create!(lesson_name: "Russian 2A", teacher: User.first)
-american = Lesson.create!(lesson_name: "American 1A", teacher: User.first)
-french = Lesson.create!(lesson_name: "French 3A", teacher: User.third)
+russian = Lesson.create!(lesson_name: "Russian - Beginners", teacher: User.first)
+italian = Lesson.create!(lesson_name: "Italian - Intermediate", teacher: User.first)
+parseltongue = Lesson.create!(lesson_name: "Parseltongue - Advanced", teacher: User.first)
+french = Lesson.create!(lesson_name: "French - Beginners", teacher: User.first)
 
-[jeremy, theresa, nigel, boris, jacob, ivanka].each do |student|
+[neville, ron, harry, hermione, draco].each do |student|r
   StudentLesson.create!(student: student, lesson: russian)
   StudentLesson.create!(student: student, lesson: american)
   StudentLesson.create!(student: student, lesson: french)
+  StudentLesson.create!(student: student, lesson: parseltongue)
 end
