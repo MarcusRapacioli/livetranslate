@@ -146,10 +146,13 @@
         <% @user.orders.each do |t|  %>
         <% if t.state == "paid" %>
      <div class="assignment">
-      <div class="doc-name">
-    <%= t.document_id %> <%= t.document.title %> ------ <%= t.updated_at %> ------  <%= t.state %>
+      <div class="doc-name invoices101">
+    <%= t.document.title %> <br>
+    <p>Added: <%= t.updated_at.strftime("%d %b %y") %></p>
+
      </div>
-     £<%= t.amount_cents / 100 %>
+     £<%= t.amount_cents / 100 %> <br>
+     <%= t.state.capitalize! %>
       </div>
         <% end %>
       <% end %>
