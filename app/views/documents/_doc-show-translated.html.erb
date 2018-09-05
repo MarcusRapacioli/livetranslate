@@ -8,7 +8,9 @@
       </div>
       <div class="button-flex">
         <div class="initial-footer">
-          <%= link_to 'Download', document_path(@document, :format => :pdf), class: "button"  %>
+          <%= link_to("Download", "https://res.cloudinary.com/dkzrn6xok/image/upload/fl_attachment/#{@document.pdf.file.public_id}") %>
+          <%# raise %>
+
         </div>
       </div>
     </div>
