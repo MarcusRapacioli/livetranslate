@@ -59,9 +59,10 @@ $(document).ready(function() {
           });
         });
       });
+      document.getElementById('button-arthur').innerHTML = 'Sit tight 👌'
     });
-    setTimeout(function() { document.getElementById('fancy-btn').submit()}, 3500)
-
+    setTimeout(function() { document.getElementById('fancy-btn').submit()}, 5000)
   });
+
 
 });
