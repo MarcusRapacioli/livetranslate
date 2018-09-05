@@ -1,0 +1,22 @@
+<div class="margin-top">
+
+  </div>
+
+  <div class="flex-doc">
+    <div class="inital-container">
+      <div class="doc-headers">
+        Original | Preview | Download
+        <div class="initial">
+          <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+        </div>
+      </div>
+    </div>
+    <div class="final-container">
+      <div class="doc-headers">
+        Translation | Preview | Download
+        <div class="final">
+          <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+        </div>
+      </div>
+    </div>
+  </div>
