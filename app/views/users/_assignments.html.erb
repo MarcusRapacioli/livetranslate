@@ -2,12 +2,21 @@
 <% documents.each do |t| %>
   <div class="assignment">
     <div class="doc-name">
-      <% if  %>
-      <%= link_to edit_document_section_path(t, t.sections.where(student: current_user).first), id: "preview_#{t.id}", class: "preview_link" do %>
-        <%= t.title %>
-        <p>Added: <%= t.created_at.strftime("%d %b %y") %></p>
-        <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+      <% if t.sections.find_by(student: current_user).status == "To Do" %>
+        <%= link_to edit_document_section_path(t, t.sections.where(student: current_user).first), id: "preview_#{t.id}", class: "preview_link" do %>
+          <%= t.title %>
+          <p>Added: <%= t.created_at.strftime("%d %b %y") %></p>
+          <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+        <% end %>
+      <% else %>
+        <%= link_to edit_document_section_path(t, t.sections.where(student: current_user).first), id: "preview_#{t.id}", class: "preview_link" do %>
+          <%= t.title %>
+          <p>Added: <%= t.created_at.strftime("%d %b %y") %></p>
+          <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+        <% end %>
       <% end %>
+
+
     </div>
     <div class="status">
       <% if t.sections.find_by(student: current_user).status == "Submitted" %>
