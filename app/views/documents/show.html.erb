@@ -1,5 +1,5 @@
 
 <%= render 'doc-show-pay' if @document.order.state != 'paid'  %>
-<%= render 'doc-show-pending' if @document.order.state == 'paid' %>
+<%= render 'doc-show-pending' if @document.order.state == 'paid' && @document.final_content == "" %>
 <%= render 'doc-show-translated' if @document.final_content?  %>
 
