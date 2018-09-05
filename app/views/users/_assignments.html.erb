@@ -1,24 +1,28 @@
 <% documents = lesson.documents %>
 <% documents.each do |t| %>
- <div class="assignment">
-       <div class="doc-name">
-         <%= link_to edit_document_section_path(t, t.sections.where(student: current_user).first), id: "preview_#{t.id}", class: "preview_link" do %>
+  <div class="assignment">
+    <div class="doc-name">
+      <%= link_to edit_document_section_path(t, t.sections.where(student: current_user).first), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
         <p>Added: <%= t.created_at.strftime("%d %b %y") %></p>
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
-        <% end %>
-       </div>
-    <div class="status">
-      <% if t.sections.find_by(student: current_user).status == "Complete" %>
-      <div class="complete">
-        <%= t.sections.find_by(student: current_user).status %>
-      </div>
-      <% else %>
-      <div class="to-do">
-        <%= t.sections.find_by(student: current_user).status %>
-      </div>
       <% end %>
     </div>
- </div>
+    <div class="status">
+      <% if t.sections.find_by(student: current_user).status == "Submitted" %>
+        <div class="complete">
+          <%= t.sections.find_by(student: current_user).status %>
+        </div>
+      <% elsif t.sections.find_by(student: current_user).status == "To Do"%>
+        <div class="to-do">
+          <%= t.sections.find_by(student: current_user).status %>
+        </div>
+      <% else %>
+        <div class="livetranslated">
+          <%= t.sections.find_by(student: current_user).status %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 <% end %>
 

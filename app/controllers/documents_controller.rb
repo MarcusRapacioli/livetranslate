@@ -74,6 +74,7 @@ class DocumentsController < ApplicationController
       @id = current_user.id
       respond_to do |format|
         format.js { render action: "success.js.erb" }
+      @section.status = "livetranslated"
       end
     end
   end
