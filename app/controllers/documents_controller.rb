@@ -69,12 +69,12 @@ class DocumentsController < ApplicationController
       @document.final_content = ""
       @document.sections.order(:order).each do |section|
         @document.final_content << section.final_content
+        section.status = "livetranslated"
       end
       @document.save!
       @id = current_user.id
       respond_to do |format|
         format.js { render action: "success.js.erb" }
-      @section.status = "livetranslated"
       end
     end
   end
