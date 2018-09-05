@@ -2,8 +2,14 @@
   <div class="left-section">
    <div class="links">
     <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-      <%= link_to "Profile", user_path(current_user) %>
+      <div class="logout-profile-flex">
+        <div id="spacer">
+          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </div>
+        <div>
+          <%= link_to "Profile", user_path(current_user) %>
+        </div>
+      </div>
     <% else %>
       <%= link_to "Login / Register", new_user_session_path %>
     <% end %>

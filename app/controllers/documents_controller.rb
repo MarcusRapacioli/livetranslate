@@ -71,6 +71,7 @@ class DocumentsController < ApplicationController
       @document.sections.order(:order).each do |section|
         @document.final_content << section.final_content
         section.status = "livetranslated"
+        section.save
       end
       @document.save!
       create_pdf
