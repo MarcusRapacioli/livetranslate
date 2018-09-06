@@ -186,6 +186,10 @@ border-bottom: 4px solid transparent;
     text-decoration: none;
     opacity: 0.8;
   }
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .submitted {
@@ -209,6 +213,10 @@ text-align: center;
 vertical-align: center;
   p{
     margin: 0
+  }
+  a {
+    text-decoration: none;
+    color: white;
   }
 }
 
