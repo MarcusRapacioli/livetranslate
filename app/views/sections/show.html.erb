@@ -28,7 +28,7 @@
   <div class="content-box">
     <div class="tab-content">
       <div class="tab-pane active" id="show-original">
-        <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+        <%= cl_image_tag @document.pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim", :class => "document" %>
       </div>
       <div class="tab-pane" id="your-section">
         <div class="selected-card">
@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="tab-pane" id="show-final">
-        <%= cl_image_tag @document.final_pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim" %>
+        <%= cl_image_tag @document.final_pdf.file.public_id, format: :jpg, density: 300, width: 800, :id => "trim", :class => "document" %>
       </div>
     </div>
 
