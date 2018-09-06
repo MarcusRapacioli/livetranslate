@@ -108,6 +108,34 @@
   }
 }
 
+#logo-form {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 45px;
+  line-height: 45px;
+  vertical-align: center;
+  margin-left: 10px;
+  a {
+    color: white;
+    text-decoration: none !important;
+    font-size: 25px;
+  }
+  a:hover {
+    color: white;
+  }
+  a:after {
+    display:block;
+    content: '';
+    border-bottom: 2px solid white;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  a:hover:after {
+    transform: scaleX(1);
+  }
+}
+
 
 
 
