@@ -1,12 +1,22 @@
 <% documents = lesson.documents.reverse %>
 <% documents.each do |t| %>
  <div class="assignment">
+<% if t.final_content %>
+       <div class="doc-name">
+      <%= link_to document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
+        <%= t.title %>
+        <p>Added: <%= t.created_at.strftime("%d %b %y") %></p>
+        <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
+       </div>
+       <% end %>
+<% else %>
        <div class="doc-name">
       <%= link_to edit_document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
         <p>Added: <%= t.created_at.strftime("%d %b %y") %></p>
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
        </div>
+      <% end %>
       <% end %>
     <div class="status">
       <% if t.final_content? %>
