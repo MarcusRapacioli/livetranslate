@@ -1,7 +1,7 @@
 <% docs = lesson.documents.order(created_at: :desc) %>
 <% docs.each do |t| %>
  <div class="assignment">
-<% if t.final_content %>
+<% if t.final_content? %>
        <div class="doc-name">
       <%= link_to document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
@@ -18,11 +18,11 @@
        </div>
       <% end %>
       <% end %>
+
+
     <div class="status">
       <% if t.final_content? %>
-      <div class="livetranslated">
-        live<strong>translated</strong>
-      </div>
+  <a type="button" class="livetranslated" href=<%= document_path(t) %> >live<strong>translated</strong></a>
       <% else %>
         <a type="button" class="btn btn-upload to-do" href=<%= edit_document_path(t) %> >live<strong>translate</strong></a>
       <% end %>
