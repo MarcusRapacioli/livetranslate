@@ -48,7 +48,7 @@
                     <% end %>
                   </div>
                   <% if document.student_content == "paid" %>
-                  <a type="button" class="btn btn-success">live<strong>translating</strong></a>
+                  <div class="btn btn-good">live<strong>translating</strong></div>
                   <% elsif document.student_content == "translated" %>
                   <%= link_to 'Download', document_path(document), :class => "btn btn-upload" %>
                   <% else %>
@@ -91,7 +91,7 @@
       <div class="doc-name">
         <%= link_to document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
-        <p>Added: <%= t.created_at.strftime("%d %b %y")%></p>
+        <p>Added: <%= t.updated_at.strftime("%d %b %y")%></p>
         <%# raise %>
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
@@ -121,6 +121,7 @@
       <div class="doc-name">
         <%= link_to document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
         <%= t.title %>
+        <p>Added: <%= t.updated_at.strftime("%d %b %y") %></p>
         <%= cl_image_tag t.pdf.file.public_id, format: :jpg, density: 300, class: 'files-image' %>
         <% end %>
      </div>

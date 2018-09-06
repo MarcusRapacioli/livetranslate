@@ -13,10 +13,8 @@
       <div class="livetranslated">
         live<strong>translated</strong>
       </div>
-      <% elsif %>
-        <a type="button" class="btn btn-upload to-do">live<strong>translate</strong></a>
       <% else %>
-        <a type="button" class="btn btn-upload to-do">Allocate</strong></a>
+        <a type="button" class="btn btn-upload to-do" href=<%= edit_document_path(t) %> >live<strong>translate</strong></a>
       <% end %>
     </div>
  </div>
