@@ -28,9 +28,7 @@
           <p>Submitted</p>
         </div>
       <% elsif t.sections.find_by(student: current_user).status == "To Do"%>
-        <div class="to-do">
-           <%= link_to "To Do", edit_document_section_path(t, t.sections.where(student: current_user).first) %>
-        </div>
+          <%= link_to 'To do', document_path(t), class: "btn-to-do" %>
       <% else %>
         <div class="livetranslated">
           <a href=<%= document_section_path(t, t.sections.where(student: current_user).first) %>>live<strong>translated</strong></a>

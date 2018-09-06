@@ -1,7 +1,8 @@
 <!-- <h1><strong><%=@document.original_content %>awefhio;awefi;awefij</strong> </h1> -->
 
 <div class="final-content">
-<% @document.sections.each do |section| %>
+
+<% @document.sections.order(:order).each do |section| %>
 <%# if section.final_content? %>
   <h1 class="pdf-text">&nbsp&nbsp&nbsp&nbsp<%= section.final_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %></h1>
   </br>
