@@ -49,6 +49,8 @@
                   </div>
                   <% if document.student_content == "paid" %>
                   <a type="button" class="btn btn-success">live<strong>translating</strong></a>
+                  <% elsif document.student_content == "translated" %>
+                  <%= link_to 'Download', document_path(document), :class => "btn btn-upload" %>
                   <% else %>
                   <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#payment-<%= document.id %>">Purchase</button></a>
                   <a class="fas fa-times" <%= link_to '', document_path(document), method: :delete %></a>
@@ -77,14 +79,14 @@
           <div class="doc-count">
             <% i = 0 %>
             <% @documents.each do |document| %>
-            <% if !document.student_content.blank? %>
+            <% if document.student_content == "paid" %>
               <% i += 1 %>
               <% end %>
             <% end %>
           <p><%= i %> documents</p>
         </div>
         <% @documents.reverse.each do |t|  %>
-        <% if !t.student_content.blank? %>
+        <% if t.student_content == "paid" %>
      <div class="assignment">
       <div class="doc-name">
         <%= link_to document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>
@@ -114,7 +116,7 @@
           <p><%= i %> documents</p>
         </div>
       <% @documents.reverse.each do |t|  %>
-        <% if t.final_content? %>
+        <% if t.student_content == "translated" %>
      <div class="assignment">
       <div class="doc-name">
         <%= link_to document_path(t), id: "preview_#{t.id}", class: "preview_link" do %>

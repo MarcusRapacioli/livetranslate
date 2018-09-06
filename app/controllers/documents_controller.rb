@@ -73,6 +73,7 @@ class DocumentsController < ApplicationController
         section.status = "livetranslated"
         section.save
       end
+      @document.student_content = "translated"
       @document.save!
       create_pdf
       @id = current_user.id
