@@ -28,9 +28,8 @@
           <p>Submitted</p>
         </div>
       <% elsif t.sections.find_by(student: current_user).status == "To Do"%>
-        <div class="to-do">
-           <p>To Do</p>
-        </div>
+          <%= link_to 'To do', document_path(t), class: "btn-to-do" %>
+
       <% else %>
         <div class="livetranslated">
           <p>live<strong>translated</strong></p>
