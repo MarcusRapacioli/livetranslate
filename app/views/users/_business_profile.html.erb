@@ -38,7 +38,8 @@
             <% end %>
           <p><%= i %> documents</p>
               </div>
-              <% @documents.reverse.each do |document| %>
+              <% docs = @documents.order(created_at: :desc) %>
+              <% docs.each do |document| %>
                 <div class="assignment">
                   <div class="doc-name">
                     <%= link_to document_path(document), id: "preview_#{document.id}", class: "preview_link" do %>
@@ -85,7 +86,8 @@
             <% end %>
           <p><%= i %> documents</p>
         </div>
-        <% @documents.reverse.each do |t|  %>
+        <% docs = @documents.order(created_at: :desc) %>
+        <% docs.each do |t|  %>
         <% if t.student_content == "paid" %>
      <div class="assignment">
       <div class="doc-name">
@@ -115,7 +117,8 @@
             <% end %>
           <p><%= i %> documents</p>
         </div>
-      <% @documents.reverse.each do |t|  %>
+      <% docs = @documents.order(created_at: :desc) %>
+      <% docs.each do |t|  %>
         <% if t.student_content == "translated" %>
      <div class="assignment">
       <div class="doc-name">
@@ -146,7 +149,8 @@
             <% end %>
           <p><%= i %> documents</p>
         </div>
-        <% @user.orders.each do |t|  %>
+        <% orders = @user.orders.order(created_at: :desc) %>
+        <% orders.each do |t|  %>
         <% if t.state == "paid" %>
      <div class="assignment">
       <div class="doc-name invoices101">

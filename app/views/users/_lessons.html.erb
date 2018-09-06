@@ -1,5 +1,5 @@
-<% documents = lesson.documents.reverse %>
-<% documents.each do |t| %>
+<% docs = lesson.documents.order(created_at: :desc) %>
+<% docs.each do |t| %>
  <div class="assignment">
 <% if t.final_content %>
        <div class="doc-name">
