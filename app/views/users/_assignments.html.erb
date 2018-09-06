@@ -29,11 +29,11 @@
         </div>
       <% elsif t.sections.find_by(student: current_user).status == "To Do"%>
         <div class="to-do">
-           <p>To Do</p>
+           <%= link_to "To Do", edit_document_section_path(t, t.sections.where(student: current_user).first) %>
         </div>
       <% else %>
         <div class="livetranslated">
-          <p>live<strong>translated</strong></p>
+          <a href=<%= document_section_path(t, t.sections.where(student: current_user).first) %>>live<strong>translated</strong></a>
         </div>
       <% end %>
     </div>
