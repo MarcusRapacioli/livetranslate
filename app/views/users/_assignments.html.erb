@@ -1,5 +1,5 @@
-<% documents = lesson.documents %>
-<% documents.each do |t| %>
+<% docs = lesson.documents.order(created_at: :desc) %>
+<% docs.each do |t| %>
   <div class="assignment">
     <div class="doc-name">
       <% if t.sections.find_by(student: current_user).status == "To Do" %>
