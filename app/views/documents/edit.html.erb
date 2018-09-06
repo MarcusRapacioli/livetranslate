@@ -20,7 +20,7 @@
       <% @sections.each do |section| %>
         <div id="section-<%= section.id %>" style="position: relative;">
         <%= link_to edit_document_path(@document, section: section.id), remote: true do %>
-          <div class="section-whole ">
+          <div class="section-whole <%= 'checked' if section.checked %>">
             <div class="section-text">
               <span class="tooltiptext"><%= section.student.name %></span>
               <% if section.final_content.present? %>

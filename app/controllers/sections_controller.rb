@@ -43,6 +43,7 @@ class SectionsController < ApplicationController
   def teacher_update
     @section = Section.find(params[:id])
     @section.final_content = params[:final_content]
+    @section.checked = true
     @section.save!
     redirect_to edit_document_path(@section.document)
   end
