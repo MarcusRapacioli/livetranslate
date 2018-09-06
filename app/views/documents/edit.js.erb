@@ -1,5 +1,5 @@
 editSection = document.getElementById('section-<%= @section.id %>');
 editSection.innerHTML = `<%= render 'sections/form', document: @document, section: @section %>`
 <% display_content = @section.final_content ? @section.final_content : @section.original_content %>
-console.log("<%= display_content%>")
+console.log("<%= display_content %>")
 document.getElementById("section-<%= @section.id%>-content").value = "<%= display_content.gsub(/(\[\"|\"\])/, '').split('", "').join(" ") %>"
