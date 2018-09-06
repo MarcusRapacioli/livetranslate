@@ -21,10 +21,7 @@ User.create!(first_name: "Warren", last_name: "Buffet", email: "warren@me.com", 
 
 georges = User.create!(first_name: "Georges", last_name: "Haines", email: "georges@me.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
 ben = User.create!(first_name: "Ben", last_name: "Riley", email: "ben@me.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
-ross = User.create!(first_name: "Ross", last_name: "Kerr", email: "ross@me.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
 katie = User.create!(first_name: "Katie", last_name: "Pitcher", email: "katie@me.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
-lizzie = User.create!(first_name: "Lizzie", last_name: "Dilks", email: "lizzie@me.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
-
 
 russian = Lesson.create!(lesson_name: "Russian - Beginners", teacher: User.first)
 italian = Lesson.create!(lesson_name: "Italian - Intermediate", teacher: User.first)
