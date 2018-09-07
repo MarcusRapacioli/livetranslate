@@ -20,7 +20,7 @@ User.create!(first_name: "Professor", last_name: "Sprague", email: "w@w.com", pa
 User.create!(first_name: "Warren", last_name: "Buffet", email: "w@me.com", password: "moolah", user_type: "Business", institution: "Berkshire Hathaway")
 
 georges = User.create!(first_name: "Georges", last_name: "Haines", email: "g@g.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
-ben = User.create!(first_name: "Ben", last_name: "Riley", email: "b@y.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
+andy = User.create!(first_name: "Andy", last_name: "Levis", email: "a@a.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
 yuichi = User.create!(first_name: "Yuichi", last_name: "Toyama", email: "y@y.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
 
 russian = Lesson.create!(lesson_name: "Russian - Beginners", teacher: User.first)
@@ -28,7 +28,7 @@ italian = Lesson.create!(lesson_name: "Italian - Intermediate", teacher: User.fi
 japanese = Lesson.create!(lesson_name: "Japanese - Advanced", teacher: User.first)
 french = Lesson.create!(lesson_name: "French - Beginners", teacher: User.first)
 
-[georges, ben, yuichi].each do |student|
+[georges, andy, yuichi].each do |student|
   StudentLesson.create!(student: student, lesson: russian)
   StudentLesson.create!(student: student, lesson: italian)
   StudentLesson.create!(student: student, lesson: french)
