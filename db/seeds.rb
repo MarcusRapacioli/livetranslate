@@ -16,12 +16,12 @@ User.destroy_all
 
 puts "Creating Durham Uni"
 
-User.create!(first_name: "Professor", last_name: "Sprague", email: "wes@me.com", password: "moolah", user_type: "Teacher", institution: "Durham Uni")
-User.create!(first_name: "Warren", last_name: "Buffet", email: "warren@me.com", password: "moolah", user_type: "Business", institution: "Berkshire Hathaway")
+User.create!(first_name: "Professor", last_name: "Sprague", email: "w@w.com", password: "moolah", user_type: "Teacher", institution: "Durham Uni")
+User.create!(first_name: "Warren", last_name: "Buffet", email: "w@me.com", password: "moolah", user_type: "Business", institution: "Berkshire Hathaway")
 
-georges = User.create!(first_name: "Georges", last_name: "Haines", email: "georges@me.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
-ben = User.create!(first_name: "Ben", last_name: "Riley", email: "ben@me.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
-yuichi = User.create!(first_name: "Yuichi", last_name: "Toyama", email: "yuichi@me.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
+georges = User.create!(first_name: "Georges", last_name: "Haines", email: "g@g.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
+ben = User.create!(first_name: "Ben", last_name: "Riley", email: "b@y.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
+yuichi = User.create!(first_name: "Yuichi", last_name: "Toyama", email: "y@y.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
 
 russian = Lesson.create!(lesson_name: "Russian - Beginners", teacher: User.first)
 italian = Lesson.create!(lesson_name: "Italian - Intermediate", teacher: User.first)
