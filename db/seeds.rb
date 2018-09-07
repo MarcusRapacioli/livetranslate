@@ -16,7 +16,7 @@ User.destroy_all
 
 puts "Creating Durham Uni"
 
-User.create!(first_name: "Professor", last_name: "Sprague", email: "w@w.com", password: "moolah", user_type: "Teacher", institution: "Durham Uni")
+User.create!(first_name: "Professor", last_name: "Del Piero", email: "w@w.com", password: "moolah", user_type: "Teacher", institution: "Durham Uni")
 User.create!(first_name: "Warren", last_name: "Buffet", email: "w@me.com", password: "moolah", user_type: "Business", institution: "Berkshire Hathaway")
 
 georges = User.create!(first_name: "Georges", last_name: "Haines", email: "g@g.com", password: "moolah", user_type: "Student", institution: "Durham Uni")
